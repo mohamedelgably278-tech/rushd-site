@@ -1,781 +1,946 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="رُشد — منصة تساعدك تستثمر في العقار بثقة. اعرف فين تحط فلوسك، أمانها إيه، وعائدها كام.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="رُشد — قبل ما تحط فلوس عمرك في عقار، اعرف إنك مش بتغلط. مستشارك المحايد للاستثمار العقاري.">
+<meta name="theme-color" content="#241241">
+<title>رُشد · استثمر بعقل</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2026%27%3E%3Cpath%20d%3D%27M12%201l10%204v8c0%206.5-4.3%2010.5-10%2012C6.3%2023.5%202%2019.5%202%2013V5z%27%20fill%3D%27%2523241241%27/%3E%3Cpath%20d%3D%27M8%2013l3%203%205-6%27%20stroke%3D%27%2523AEDD1C%27%20stroke-width%3D%272.4%27%20fill%3D%27none%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="رُشد">
 <meta property="og:title" content="رُشد · استثمر في العقار بثقة">
-<meta property="og:description" content="اعرف المطوّر، الأمان، والعائد — قبل ما تدفع جنيه.">
-<meta property="og:image" content="https://www.rush-d.net/og-image.png">
+<meta property="og:description" content="قبل ما تحط فلوس عمرك في عقار، اعرف إنك مش بتغلط — فحص محايد لصفقتك وللمطوّر قبل ما توقّع. من غير بيع ومن غير عمولة.">
 <meta property="og:url" content="https://www.rush-d.net/">
+<meta property="og:image" content="https://www.rush-d.net/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<title>رُشد · استثمر في العقار بثقة</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 26'%3E%3Cpath d='M12 1l10 4v8c0 6.5-4.3 10.5-10 12C6.3 23.5 2 19.5 2 13V5z' fill='%23241241'/%3E%3Cpath d='M8 13l3 3 5-6' stroke='%23AEDD1C' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta name="twitter:title" content="رُشد · استثمر في العقار بثقة">
+<meta name="twitter:description" content="قبل ما تحط فلوس عمرك في عقار، اعرف إنك مش بتغلط — فحص محايد لصفقتك وللمطوّر قبل ما توقّع. من غير بيع ومن غير عمولة.">
+<meta name="twitter:image" content="https://www.rush-d.net/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--plum-ink:#241241;--plum:#6A45C9;--plum-2:#553098;--plum-soft:#EFEAFB;--lime:#AEDD1C;--lime-deep:#51730A;--lime-soft:#EEF7D6;--coral:#DD4F36;--coral-soft:#FBE6E0;--amber:#DD8E2A;--amber-soft:#FAEFD8;--paper:#FBF8F3;--card:#FFFFFF;--ink:#2A2236;--ink-soft:#6A6380;--line:#ECE5DB;--sh:0 2px 8px rgba(36,18,65,.06),0 12px 32px rgba(36,18,65,.08);--sh-lg:0 4px 16px rgba(36,18,65,.08),0 28px 60px rgba(36,18,65,.14)}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Tajawal',sans-serif;background:var(--paper);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3{font-family:'El Messiri',serif;color:var(--plum-ink);line-height:1.22}
-a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:'Tajawal'}
-::selection{background:var(--lime);color:var(--plum-ink)}
-:focus-visible{outline:3px solid var(--plum);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
-.view{display:none}.view.active{display:block}
+  :root{--plum-ink:#241241;--plum:#6A45C9;--plum-2:#553098;--plum-soft:#EFEAFB;--lime:#AEDD1C;--lime-deep:#51730A;--lime-soft:#EEF7D6;--coral:#DD4F36;--coral-soft:#FBE6E0;--amber:#DD8E2A;--amber-soft:#FAEFD8;--paper:#FBF8F3;--card:#FFFFFF;--ink:#2A2236;--ink-soft:#6A6380;--line:#ECE5DB;--shadow:0 1px 2px rgba(36,18,65,.04),0 12px 30px rgba(36,18,65,.07);--shadow-lg:0 2px 8px rgba(36,18,65,.06),0 26px 60px rgba(36,18,65,.14)}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'Tajawal',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.display{font-family:'El Messiri',serif;color:var(--plum-ink);line-height:1.22}
+  ::selection{background:var(--lime);color:var(--plum-ink)}a{text-decoration:none;color:inherit}
+  :focus-visible{outline:3px solid var(--plum);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  .view{display:none}.view.active{display:block}
 
-/* ── REGISTER WALL ── */
-.wall{position:fixed;inset:0;z-index:900;background:rgba(36,18,65,.7);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px}
-.wall.off{display:none}
-.wall-box{background:var(--card);border-radius:26px;padding:36px 30px;max-width:420px;width:100%;box-shadow:var(--sh-lg);animation:popIn .4s cubic-bezier(.34,1.4,.4,1)}
-@keyframes popIn{from{opacity:0;transform:scale(.85) translateY(24px)}to{opacity:1;transform:none}}
-.wall-logo{display:flex;align-items:center;gap:9px;font-family:'El Messiri';font-weight:700;font-size:24px;color:var(--plum-ink);margin-bottom:20px}
-.wall-logo svg{width:24px;height:26px}
-.wall-box h2{font-size:22px;margin-bottom:6px}
-.wall-box .sub{font-size:14.5px;color:var(--ink-soft);font-weight:500;margin-bottom:22px;line-height:1.65}
-.wall-form{display:flex;flex-direction:column;gap:11px}
-.wall-form input{font-family:'Tajawal';font-weight:600;font-size:15px;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);transition:.15s}
-.wall-form input:focus{outline:none;border-color:var(--plum);background:#fff}
-.wall-btn{background:var(--plum);color:#fff;border:none;border-radius:12px;padding:14px;font-weight:800;font-size:16px;box-shadow:0 8px 22px rgba(106,69,201,.28);transition:.15s}
-.wall-btn:hover{background:var(--plum-2)}
-.wall-fine{text-align:center;font-size:12.5px;color:var(--ink-soft);margin-top:10px}
-.wall-ok{display:none;text-align:center;padding:8px 0;font-weight:700;font-size:15px;color:var(--lime-deep)}
+  /* nav */
+  header{position:sticky;top:0;z-index:60;background:rgba(251,248,243,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:14px;height:66px;position:relative}
+  .logo{display:flex;align-items:center;gap:9px;font-family:'El Messiri';font-weight:700;font-size:24px;color:var(--plum-ink);cursor:pointer}
+  .logo .shield{width:23px;height:25px}
+  .menu{display:flex;gap:3px;align-items:center;margin-right:auto}
+  .menu a{font-weight:700;font-size:14.5px;color:var(--ink-soft);padding:8px 12px;border-radius:10px;transition:all .15s;cursor:pointer}
+  .menu a:hover,.menu a.active{color:var(--plum-ink);background:var(--plum-soft)}
+  .nav-cta{font-family:'Tajawal';font-weight:700;font-size:14.5px;background:var(--plum-ink);color:#fff;padding:10px 18px;border-radius:11px;cursor:pointer;transition:all .15s}
+  .nav-cta:hover{background:var(--plum)}
+  .burger{display:none;place-items:center;width:42px;height:42px;border-radius:11px;border:1.5px solid var(--line);background:var(--card);cursor:pointer}
+  .burger svg{width:20px;height:20px;stroke:var(--plum-ink);stroke-width:2.2}
+  @media(max-width:820px){
+    .menu{display:none;position:absolute;top:66px;right:0;left:0;background:var(--card);border:1px solid var(--line);border-radius:0 0 16px 16px;flex-direction:column;gap:2px;padding:10px;margin:0;box-shadow:var(--shadow-lg);align-items:stretch}
+    .menu.open{display:flex}.menu a{padding:13px 14px;font-size:16px}
+    .burger{display:grid}.nav-cta{display:none}
+  }
 
-/* ── NAV ── */
-header{position:sticky;top:0;z-index:100;background:rgba(251,248,243,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:10px;height:64px}
-.logo{display:flex;align-items:center;gap:8px;font-family:'El Messiri';font-weight:700;font-size:22px;color:var(--plum-ink);cursor:pointer;flex-shrink:0}
-.logo svg{width:21px;height:23px}
-.nav-links{display:flex;gap:2px;margin-right:auto}
-.nav-links a{font-weight:700;font-size:14px;color:var(--ink-soft);padding:7px 11px;border-radius:10px;transition:.15s;cursor:pointer}
-.nav-links a:hover,.nav-links a.on{color:var(--plum-ink);background:var(--plum-soft)}
-.nav-user{display:flex;align-items:center;gap:8px}
-.nav-name{font-weight:700;font-size:14px;color:var(--ink-soft)}
-.nav-out{font-size:13px;color:var(--coral);font-weight:700;background:none;border:none;padding:6px 10px}
-.burger{display:none;width:40px;height:40px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);place-items:center}
-.burger svg{width:19px;height:19px;stroke:var(--plum-ink);stroke-width:2.2;fill:none}
-.mob-menu{display:none;flex-direction:column;gap:2px;padding:10px;background:var(--card);border-bottom:1px solid var(--line)}
-.mob-menu a{font-weight:700;font-size:15px;color:var(--ink);padding:12px 14px;border-radius:11px;cursor:pointer}
-.mob-menu a:hover{background:var(--plum-soft)}
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;border:none;font-family:'Tajawal';font-weight:700;font-size:16px;border-radius:14px;padding:15px 26px;transition:transform .15s,box-shadow .15s,background .15s}
+  .btn-primary{background:var(--plum);color:#fff;box-shadow:0 10px 26px rgba(106,69,201,.3)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(106,69,201,.38)}
+  .btn-ghost{background:transparent;color:var(--plum-ink);border:1.5px solid #DcD3c6}
+  .btn-ghost:hover{border-color:var(--plum);color:var(--plum)}
+  .btn-lime{background:var(--lime);color:var(--plum-ink);box-shadow:0 10px 26px rgba(174,221,28,.32)}
+  .btn-lime:hover{transform:translateY(-2px)}
 
-/* ── SHARED ── */
-.phead{padding:42px 0 8px;text-align:center}
-.ey{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:13px;color:var(--plum-2);background:var(--plum-soft);padding:6px 14px;border-radius:100px;margin-bottom:14px}
-.pulse{width:8px;height:8px;border-radius:50%;background:var(--coral);animation:pulse 2.4s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(221,79,54,.5)}70%{box-shadow:0 0 0 9px rgba(221,79,54,0)}100%{box-shadow:0 0 0 0 rgba(221,79,54,0)}}
-.phead h1{font-size:clamp(24px,4.5vw,38px);font-weight:700;max-width:22ch;margin:0 auto}
-.phead p{font-size:15.5px;color:var(--ink-soft);max-width:52ch;margin:12px auto 0;font-weight:500}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;border-radius:13px;padding:13px 22px;border:none;transition:.15s;cursor:pointer}
-.btn-primary{background:var(--plum);color:#fff;box-shadow:0 8px 24px rgba(106,69,201,.28)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(106,69,201,.36)}
-.btn-lime{background:var(--lime);color:var(--plum-ink)}.btn-lime:hover{transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:var(--plum-ink);border:1.5px solid var(--line)}.btn-ghost:hover{border-color:var(--plum);color:var(--plum)}
-.disc{font-size:12px;color:var(--ink-soft);line-height:1.7;margin:20px 0 50px;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 16px}
+  /* shared page head + eyebrow */
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;color:var(--plum-2);background:var(--plum-soft);padding:7px 15px;border-radius:100px;margin-bottom:16px}
+  .phead{padding:48px 0 8px;text-align:center;position:relative}
+  .phead::before{content:"";position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:560px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(106,69,201,.10),transparent 65%);pointer-events:none}
+  .phead h1{position:relative;font-size:clamp(26px,5vw,40px);font-weight:700;max-width:22ch;margin:0 auto;letter-spacing:-.5px}
+  .phead p{position:relative;font-size:16px;color:var(--ink-soft);max-width:52ch;margin:14px auto 0;font-weight:500}
+  .disc{font-size:12.5px;color:var(--ink-soft);line-height:1.7;margin:24px 0 50px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
 
-/* ── HOME ── */
-.hero{position:relative;padding:56px 0 48px;overflow:hidden}
-.hbg{position:absolute;inset:0;pointer-events:none}
-.hbg::before{content:"";position:absolute;top:-180px;right:-120px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(106,69,201,.12),transparent 65%)}
-.hbg::after{content:"";position:absolute;bottom:-220px;left:-100px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(174,221,28,.14),transparent 65%)}
-.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.hero-left h1{font-size:clamp(28px,4.5vw,46px);font-weight:700;letter-spacing:-.5px;line-height:1.25;max-width:17ch;margin-top:14px}
-.hl{color:var(--plum);position:relative;display:inline-block}
-.hl::after{content:"";position:absolute;right:0;left:0;bottom:3px;height:12px;background:var(--lime);opacity:.4;z-index:-1;border-radius:4px}
-.hero-lead{font-size:clamp(15px,2vw,17px);color:var(--ink-soft);font-weight:500;margin:16px 0 24px;max-width:44ch;line-height:1.75}
-.hero-actions{display:flex;gap:11px;flex-wrap:wrap}
-.hero-trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:13px;color:var(--ink-soft);font-weight:700}
-.hero-trust span{display:flex;align-items:center;gap:6px}.hero-trust .ic{color:var(--lime-deep)}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+  .reveal.in{opacity:1;transform:none}
 
-/* hero right – photo grid */
-.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.photo-grid img{width:100%;border-radius:14px;object-fit:cover;height:140px;box-shadow:var(--sh)}
-.photo-grid .tall{grid-row:span 2;height:100%}
-.photo-caption{text-align:center;font-size:12px;color:var(--ink-soft);font-weight:600;margin-top:8px}
+  /* ===== HOME ===== */
+  .home-hero{position:relative;padding:60px 0 54px;overflow:hidden}
+  .hero-glow{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .hero-glow::before{content:"";position:absolute;top:-200px;right:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(106,69,201,.13),transparent 65%)}
+  .hero-glow::after{content:"";position:absolute;bottom:-260px;left:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(174,221,28,.16),transparent 64%)}
+  .home-hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center}
+  .eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 0 rgba(221,79,54,.5);animation:pulse 2.6s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(221,79,54,.5)}70%{box-shadow:0 0 0 9px rgba(221,79,54,0)}100%{box-shadow:0 0 0 0 rgba(221,79,54,0)}}
+  .home-hero h1{font-size:clamp(28px,5.2vw,48px);font-weight:700;letter-spacing:-.6px;max-width:17ch;line-height:1.3}
+  .home-hero h1 .hl{color:var(--plum);position:relative;white-space:nowrap}
+  .home-hero h1 .hl::after{content:"";position:absolute;right:0;left:0;bottom:4px;height:13px;background:var(--lime);opacity:.45;z-index:-1;border-radius:4px}
+  .how-strip{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:18px 0 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
+  .hs{display:flex;align-items:center;gap:8px;flex:1;min-width:120px}
+  .hn{width:26px;height:26px;border-radius:8px;background:var(--plum-ink);color:#fff;display:grid;place-items:center;font-family:'El Messiri';font-size:13px;font-weight:700;flex-shrink:0}
+  .ht{font-size:13px;font-weight:700;color:var(--ink)}
+  .hs-arrow{color:var(--ink-soft);font-size:16px;flex-shrink:0}
+  .meter-intro{background:var(--plum-soft);border-radius:11px;padding:11px 13px;font-size:13.5px;color:var(--plum-ink);margin-bottom:14px;line-height:1.6}
+  @media(max-width:600px){.hs-arrow{display:none}.hs{min-width:100%;border-bottom:1px dashed var(--line);padding-bottom:9px}.hs:last-child{border-bottom:none;padding-bottom:0}}
+  .home-hero .lead{font-size:clamp(16px,2.2vw,20px);color:var(--ink-soft);max-width:42ch;margin:22px 0 30px;font-weight:500}
+  .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+  .hero-foot{display:flex;align-items:center;gap:18px;margin-top:28px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-soft);font-weight:600}
+  .hero-foot span{display:flex;align-items:center;gap:7px}.hero-foot .ic{color:var(--lime-deep);font-weight:800}
 
-/* steps card */
-.steps-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--sh-lg)}
-.sc-title{font-weight:700;font-size:14px;color:var(--ink-soft);margin-bottom:14px;display:flex;align-items:center;gap:7px}
-.sr{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
-.sr:last-of-type{border-bottom:none}
-.sn{width:30px;height:30px;border-radius:9px;background:var(--plum-ink);color:#fff;display:grid;place-items:center;font-family:'El Messiri';font-size:14px;font-weight:700;flex-shrink:0;margin-top:2px}
-.sr .st{font-weight:700;font-size:14.5px}.sr .sd{font-size:12.5px;color:var(--ink-soft);font-weight:500;margin-top:2px}
-.steps-cta{margin-top:14px;width:100%;font-size:15px;font-weight:800;background:var(--lime);color:var(--plum-ink);border:none;border-radius:13px;padding:13px}
+  .meter-card{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-lg);padding:26px}
+  .meter-card .mtitle{font-weight:700;font-size:15px;color:var(--ink-soft);display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .meter-val{font-family:'El Messiri';font-weight:700;font-size:56px;line-height:1;color:var(--plum-ink);transition:color .4s}
+  .meter-val small{font-size:24px;opacity:.5}
+  .meter-track{height:14px;border-radius:100px;margin:14px 0 6px;background:linear-gradient(90deg,var(--coral),var(--amber) 50%,var(--lime));position:relative}
+  .meter-marker{position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--plum-ink);box-shadow:0 2px 8px rgba(0,0,0,.18);transform:translate(50%,-50%);right:50%;transition:right .6s cubic-bezier(.34,1.4,.4,1)}
+  .meter-ends{display:flex;justify-content:space-between;font-size:12px;font-weight:700}.meter-ends .e1{color:var(--coral)}.meter-ends .e2{color:var(--lime-deep)}
+  .meter-verdict{font-weight:700;font-size:16px;margin:14px 0 4px;transition:color .4s}
+  .meter-q{font-size:13px;color:var(--ink-soft);font-weight:600;margin:16px 0 10px}
+  .toggles{display:flex;flex-direction:column;gap:8px}
+  .tog{display:flex;align-items:center;gap:11px;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;cursor:pointer;user-select:none;transition:all .14s}
+  .tog:hover{border-color:#dcd3c6}.tog.on-g{border-color:var(--lime);background:var(--lime-soft)}.tog.on-r{border-color:var(--coral);background:var(--coral-soft)}
+  .tog .b{width:20px;height:20px;border-radius:6px;border:2px solid var(--line);flex-shrink:0;display:grid;place-items:center;transition:all .14s}
+  .tog.on-g .b{background:var(--lime);border-color:var(--lime)}.tog.on-r .b{background:var(--coral);border-color:var(--coral)}
+  .tog .b svg{width:11px;height:11px;stroke-width:3.5;fill:none;opacity:0;transition:opacity .14s}
+  .tog.on-g .b svg{stroke:var(--plum-ink);opacity:1}.tog.on-r .b svg{stroke:#fff;opacity:1}
+  .tog .t{font-size:14px;font-weight:600;color:var(--ink)}
+  .meter-cta{display:block;text-align:center;margin-top:16px;font-weight:700;color:var(--plum);font-size:15px;cursor:pointer}.meter-cta:hover{text-decoration:underline}
 
-/* who we are band */
-.who-band{padding:60px 0;background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
-.who-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.who-photos img{width:100%;border-radius:14px;object-fit:cover;height:150px;box-shadow:var(--sh)}
-.who-text .ey{margin-bottom:12px}
-.who-text h2{font-size:clamp(22px,3.5vw,30px);margin-bottom:14px}
-.who-text p{font-size:15px;color:var(--ink-soft);font-weight:500;line-height:1.8;margin-bottom:12px}
-.who-stat{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.ws{background:var(--plum-soft);border-radius:13px;padding:14px 18px;text-align:center;flex:1;min-width:100px}
-.ws b{font-family:'El Messiri';font-weight:700;font-size:24px;color:var(--plum-ink);display:block}
-.ws span{font-size:12px;color:var(--ink-soft);font-weight:600}
+  .band{padding:64px 0}
+  .seclabel{display:flex;align-items:center;gap:11px;margin-bottom:14px}.seclabel .ln{width:30px;height:2px;background:var(--lime)}.seclabel .tx{font-weight:700;font-size:13px;letter-spacing:1px;color:var(--ink-soft)}
+  .band h2{font-size:clamp(26px,4vw,38px);font-weight:700;max-width:22ch;letter-spacing:-.4px}
+  .band .sub{font-size:17px;color:var(--ink-soft);max-width:54ch;margin-top:14px;font-weight:500}
+  .empathy{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .emp-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .emp-list{list-style:none;display:flex;flex-direction:column;gap:18px;margin-top:6px}
+  .emp-list li{display:flex;gap:14px;align-items:flex-start}
+  .emp-list .qi{width:34px;height:34px;border-radius:10px;background:var(--coral-soft);color:var(--coral);display:grid;place-items:center;flex-shrink:0;font-weight:800;font-size:18px}
+  .emp-list .et{font-size:16px;font-weight:600;color:var(--ink);line-height:1.6}
+  .emp-aside{background:var(--plum-ink);color:#fff;border-radius:22px;padding:34px;position:relative;overflow:hidden}
+  .emp-aside::before{content:"";position:absolute;top:-90px;right:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(174,221,28,.18),transparent 60%)}
+  .emp-aside .q{position:relative;font-family:'El Messiri';font-weight:600;font-size:23px;color:#fff;line-height:1.5}
+  .emp-aside .a{position:relative;margin-top:18px;font-size:15.5px;color:rgba(255,255,255,.8);font-weight:500;border-top:1px solid rgba(255,255,255,.15);padding-top:18px}.emp-aside .a b{color:var(--lime)}
+  .prot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+  .prot{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 24px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;position:relative}
+  .prot:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .prot .pnum{font-family:'El Messiri';font-weight:700;font-size:14px;color:var(--lime-deep);background:var(--lime-soft);width:30px;height:30px;border-radius:8px;display:grid;place-items:center;position:absolute;top:22px;left:22px}
+  .prot .picon{width:50px;height:50px;border-radius:14px;background:var(--plum-soft);display:grid;place-items:center;margin-bottom:18px}
+  .prot .picon svg{width:26px;height:26px;stroke:var(--plum);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .prot h3{font-size:20px;font-weight:700;margin-bottom:8px}.prot p{font-size:15px;color:var(--ink-soft);font-weight:500}
+  .promise{background:var(--plum-ink);color:#fff;text-align:center;padding:74px 0}
+  .promise .pl{font-weight:700;font-size:14px;letter-spacing:1px;color:rgba(255,255,255,.5);margin-bottom:18px}
+  .promise h2{color:#fff;font-size:clamp(28px,5vw,46px);font-weight:700;max-width:18ch;margin:0 auto;line-height:1.35}
+  .promise h2 .no{color:rgba(255,255,255,.42);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.25)}.promise h2 .yes{color:var(--lime)}
+  .lead-band{padding:66px 0}
+  .lead-card{background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow-lg);padding:46px;text-align:center;position:relative;overflow:hidden}
+  .lead-card::before{content:"";position:absolute;bottom:-130px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(106,69,201,.1),transparent 60%)}
+  .lead-card .inner{position:relative;z-index:1}.lead-card h2{font-size:clamp(25px,4vw,36px)}
+  .lead-card p{font-size:17px;color:var(--ink-soft);max-width:46ch;margin:14px auto 28px;font-weight:500}
+  .lead-form{display:flex;gap:10px;max-width:470px;margin:0 auto;flex-wrap:wrap}
+  .lead-form input{flex:1;min-width:200px;font-family:'Tajawal';font-weight:600;font-size:16px;padding:15px 18px;border-radius:13px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
+  .lead-form input:focus{outline:none;border-color:var(--plum);background:#fff}
+  .lead-ok{color:var(--lime-deep);font-weight:700;height:0;opacity:0;transition:opacity .3s}.lead-ok.show{opacity:1;height:auto;margin-top:18px}
+  .lead-fine{color:var(--ink-soft);font-size:13px;margin-top:18px;font-weight:500}
+  .lead-form.signup{flex-direction:column;max-width:380px}
+  .lead-form.signup input{min-width:0;width:100%}
+  .lead-form.signup .btn{width:100%;justify-content:center}
+  .soon-badge{display:inline-block;font-weight:700;font-size:12px;color:var(--plum-2);background:var(--plum-soft);padding:5px 14px;border-radius:100px;margin-bottom:14px}
 
-/* q band */
-.q-band{padding:60px 0}
-.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.q-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:10px}
-.q-list li{display:flex;gap:12px;align-items:flex-start}
-.qi{width:32px;height:32px;border-radius:10px;background:var(--coral-soft);color:var(--coral);display:grid;place-items:center;font-weight:800;font-size:16px;flex-shrink:0;margin-top:2px}
-.qt{font-size:15px;font-weight:600;line-height:1.65}
-.q-ans{background:var(--plum-ink);color:#fff;border-radius:20px;padding:28px;position:relative;overflow:hidden}
-.q-ans::before{content:"";position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(174,221,28,.18),transparent 60%)}
-.q-ans h3{color:#fff;font-size:20px;margin-bottom:10px;position:relative}
-.q-ans p{font-size:14px;color:rgba(255,255,255,.82);font-weight:500;line-height:1.7;position:relative}
-.q-ans .lime{color:var(--lime);font-weight:700}
+  /* ===== ADVISOR ===== */
+  .ask{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-lg);padding:32px;margin:30px 0;max-width:760px;margin-left:auto;margin-right:auto}
+  .ask .q{font-weight:700;font-size:15px;margin-bottom:11px;display:flex;align-items:center;gap:9px}
+  .ask .q .n{width:26px;height:26px;border-radius:8px;background:var(--plum-ink);color:#fff;display:grid;place-items:center;font-family:'El Messiri';font-size:14px;font-weight:700}
+  .ask .grp{margin-bottom:26px}
+  .amount-wrap{position:relative}
+  .amount-wrap input{width:100%;font-family:'El Messiri';font-weight:700;font-size:30px;color:var(--plum-ink);background:var(--paper);border:1.5px solid var(--line);border-radius:15px;padding:16px 18px 16px 70px;transition:border .15s}
+  .amount-wrap input:focus{outline:none;border-color:var(--plum);background:#fff}
+  .amount-wrap .cur{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-weight:700;color:var(--ink-soft);font-size:16px}
+  .goals{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px}
+  .goal{background:var(--paper);border:1.5px solid var(--line);border-radius:15px;padding:18px 14px;cursor:pointer;text-align:center;transition:all .15s;user-select:none}
+  .goal:hover{border-color:#dcd3c6}.goal.on{border-color:var(--plum);background:var(--plum-soft)}
+  .goal .gi{font-size:26px}.goal .gt{font-weight:700;font-size:14.5px;color:var(--ink);margin-top:6px}.goal .gd{font-size:11.5px;color:var(--ink-soft);font-weight:600;margin-top:2px}
+  .go-btn{width:100%;font-family:'Tajawal';font-weight:800;font-size:18px;color:#fff;background:var(--plum);border:none;border-radius:15px;padding:17px;cursor:pointer;box-shadow:0 10px 26px rgba(106,69,201,.3);transition:transform .15s}.go-btn:hover{transform:translateY(-2px)}
+  #advResult{display:none;max-width:760px;margin:0 auto}#advResult.show{display:block;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .res-lead{text-align:center;margin:6px 0 18px}.res-lead .rl{font-weight:700;font-size:14px;color:var(--ink-soft)}.res-lead h2{font-size:clamp(23px,4vw,32px);margin-top:4px}
+  .pick{background:var(--card);border:2px solid var(--lime);border-radius:24px;box-shadow:var(--shadow-lg);overflow:hidden;position:relative}
+  .pick-badge{position:absolute;top:0;right:24px;background:var(--lime);color:var(--plum-ink);font-weight:800;font-size:13px;padding:6px 16px;border-radius:0 0 12px 12px;z-index:2}
+  .pick-top{padding:30px 26px 20px;color:#fff;position:relative;overflow:hidden}
+  .pick-top::after{content:"";position:absolute;top:-70px;left:-50px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.13),transparent 60%)}
+  .pick-loc{position:relative;font-size:13px;font-weight:700;opacity:.9}.pick-title{position:relative;font-family:'El Messiri';font-weight:700;font-size:26px;color:#fff;margin-top:4px}
+  .pick-dev{position:relative;font-size:13.5px;opacity:.92;margin-top:4px}.pick-dev .sc{background:rgba(255,255,255,.2);padding:1px 9px;border-radius:6px;font-weight:700}
+  .pick-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+  .pick-kpis .k{background:var(--card);padding:18px 14px;text-align:center}.pick-kpis .kv{font-family:'El Messiri';font-weight:700;font-size:24px;color:var(--plum-ink)}.pick-kpis .kv.lime{color:var(--lime-deep)}.pick-kpis .kl{font-size:11.5px;color:var(--ink-soft);font-weight:600;margin-top:2px}
+  .why-box{padding:22px 26px}.why-box .wt{font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px;margin-bottom:8px}.why-box p{font-size:14.5px;color:var(--ink);font-weight:500;line-height:1.7}
+  .risk-row{display:flex;align-items:center;gap:12px;margin-top:16px;background:var(--paper);border-radius:12px;padding:13px 16px}
+  .risk-row .rl2{font-size:12.5px;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .rbar{flex:1;height:8px;border-radius:100px;background:linear-gradient(90deg,var(--lime),var(--amber) 65%,var(--coral));position:relative}
+  .rdot{position:absolute;top:50%;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--plum-ink);transform:translate(50%,-50%);box-shadow:0 2px 5px rgba(0,0,0,.2)}
+  .pick-cta{display:flex;gap:10px;padding:4px 26px 26px;flex-wrap:wrap}
+  .pick-cta button{flex:1;min-width:140px;font-family:'Tajawal';font-weight:700;font-size:15px;border-radius:13px;padding:14px;cursor:pointer;border:none}
+  .cta-main{background:var(--plum);color:#fff}.cta-alt{background:transparent;border:1.5px solid var(--line);color:var(--plum-ink)}
+  .alts{margin-top:26px}.alts h3{font-size:16px;margin-bottom:12px;color:var(--ink-soft)}
+  .alt{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px 18px;margin-bottom:10px}
+  .alt .ac{width:42px;height:42px;border-radius:11px;flex-shrink:0;display:grid;place-items:center;color:#fff;font-family:'El Messiri';font-weight:700;font-size:12px;text-align:center;line-height:1.1}
+  .alt .am{flex:1;min-width:0}.alt .an{font-weight:700;font-size:15px}.alt .ad{font-size:12.5px;color:var(--ink-soft);font-weight:600}
+  .alt .av{text-align:left;flex-shrink:0}.alt .av .x{font-family:'El Messiri';font-weight:700;font-size:18px;color:var(--lime-deep)}.alt .av .y{font-size:11px;color:var(--ink-soft);font-weight:600}
+  .redo{display:inline-flex;align-items:center;gap:8px;margin:24px auto 0;font-weight:700;color:var(--plum);cursor:pointer;background:none;border:none;font-family:'Tajawal';font-size:15px}
+  .none{text-align:center;background:var(--amber-soft);border:1px solid var(--amber);border-radius:16px;padding:22px;color:#7a5310;font-weight:600}
 
-/* promise */
-.promise{background:var(--plum-ink);color:#fff;text-align:center;padding:60px 0}
-.promise h2{color:#fff;font-size:clamp(24px,4.5vw,40px);max-width:20ch;margin:10px auto 0}
-.cross{color:rgba(255,255,255,.3);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.18)}
-.yes{color:var(--lime)}
-.promise .sub{font-size:15px;color:rgba(255,255,255,.7);font-weight:500;margin-top:12px}
+  /* ===== OPPORTUNITIES ===== */
+  .neutral{background:var(--plum-ink);color:#fff;border-radius:18px;padding:20px 24px;margin:6px 0 14px;display:flex;gap:14px;align-items:flex-start}
+  .neutral .ni{font-size:22px;flex-shrink:0}.neutral p{font-size:14px;color:rgba(255,255,255,.85);font-weight:500}.neutral b{color:var(--lime)}
+  .filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px 0 10px}
+  .chip{font-family:'Tajawal';font-weight:700;font-size:14px;padding:9px 17px;border-radius:100px;border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);cursor:pointer;transition:all .15s}
+  .chip.on{background:var(--plum-ink);color:#fff;border-color:var(--plum-ink)}
+  .ogrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+  .opp{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+  .opp:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .opp-top{padding:20px 22px 16px;position:relative;color:#fff;overflow:hidden}
+  .opp-top::after{content:"";position:absolute;top:-60px;left:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 60%)}
+  .opp-loc{position:relative;font-size:13px;font-weight:700;opacity:.88;display:flex;align-items:center;gap:6px}
+  .opp-title{position:relative;font-family:'El Messiri';font-weight:700;font-size:22px;color:#fff;margin-top:4px}
+  .opp-dev{position:relative;font-size:13px;opacity:.92;margin-top:3px;display:flex;align-items:center;gap:6px}.opp-dev .devsc{background:rgba(255,255,255,.2);padding:1px 8px;border-radius:6px;font-weight:700}
+  .fit{position:absolute;top:18px;left:18px;background:#fff;border-radius:12px;padding:6px 11px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+  .fit .f{font-family:'El Messiri';font-weight:700;font-size:20px;line-height:1;color:var(--lime-deep)}.fit .fl{font-size:9px;font-weight:700;color:var(--ink-soft);margin-top:1px}
+  .opp-mid{padding:18px 22px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .kpi .kl{font-size:12px;color:var(--ink-soft);font-weight:600}.kpi .kv{font-family:'El Messiri';font-weight:700;font-size:21px;color:var(--plum-ink);margin-top:1px}
+  .orisk{padding:0 22px 18px}.orisk-l{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:6px}
+  .orisk-bar{height:8px;border-radius:100px;background:linear-gradient(90deg,var(--lime),var(--amber) 65%,var(--coral));position:relative}
+  .orisk-dot{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--plum-ink);transform:translate(50%,-50%);box-shadow:0 2px 6px rgba(0,0,0,.2)}
+  .orisk-note{font-size:12.5px;color:var(--ink-soft);font-weight:600;margin-top:8px}
+  .opp-foot{margin-top:auto;border-top:1px dashed var(--line);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .opp-why{font-size:12.5px;color:var(--lime-deep);font-weight:700}
+  .opp-btn{font-family:'Tajawal';font-weight:700;font-size:13.5px;background:var(--plum);color:#fff;border:none;padding:10px 16px;border-radius:11px;cursor:pointer;white-space:nowrap}
+  .opp-photo{height:180px;background:#e9e3d8 center/cover;position:relative}
+  .opp-photo-dev{position:absolute;bottom:0;right:0;left:0;background:linear-gradient(transparent,rgba(36,18,65,.85));color:#fff;padding:26px 18px 13px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px}
+  .opp-photo-dev .devsc{background:var(--lime);color:var(--plum-ink);font-weight:800}
+  .opp-analysis{margin:0 22px 4px;background:var(--plum-soft);border-radius:12px;padding:13px 15px}
+  .opp-analysis .oa-t{font-weight:700;font-size:13px;color:var(--plum-ink);display:flex;align-items:center;gap:6px;margin-bottom:5px}
+  .opp-analysis p{font-size:13px;color:var(--ink);font-weight:500;line-height:1.65}
+  .opp-contact{padding:0 22px 14px}
+  .reveal-num{width:100%;font-family:'Tajawal';font-weight:700;font-size:14px;color:var(--plum-ink);background:var(--lime-soft);border:1.5px solid var(--lime);border-radius:12px;padding:12px;cursor:pointer;transition:all .15s}
+  .reveal-num:hover{background:var(--lime)}
+  .num-shown{display:block;text-align:center;font-family:'Tajawal';font-weight:800;font-size:17px;color:var(--lime-deep);background:var(--lime-soft);border:1.5px solid var(--lime);border-radius:12px;padding:12px;letter-spacing:.5px;direction:ltr}
 
-/* ── DEVELOPERS ── */
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
-.sbox{flex:1;min-width:200px;position:relative}
-.sbox input{width:100%;font-family:'Tajawal';font-weight:600;font-size:14.5px;padding:12px 42px 12px 14px;border:1.5px solid var(--line);border-radius:13px;background:var(--card);color:var(--ink)}
-.sbox input:focus{outline:none;border-color:var(--plum)}
-.sbox svg{position:absolute;right:13px;top:50%;transform:translateY(-50%);width:17px;height:17px;stroke:var(--ink-soft);fill:none;stroke-width:2}
-.sort-sel{font-family:'Tajawal';font-weight:700;font-size:14px;padding:12px 14px;border:1.5px solid var(--line);border-radius:13px;background:var(--card);color:var(--ink);cursor:pointer}
-.dev-grid{display:flex;flex-direction:column;gap:12px;margin:14px 0}
-.dc{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--sh);transition:.2s}
-.dc:hover{box-shadow:var(--sh-lg);transform:translateY(-2px)}
-.dc-head{display:flex;align-items:center;gap:15px;padding:16px 18px;cursor:pointer}
-.dc-logo{width:50px;height:50px;border-radius:13px;flex-shrink:0;display:grid;place-items:center;font-family:'El Messiri';font-weight:700;font-size:16px;color:#fff;overflow:hidden}
-.dc-logo img{width:100%;height:100%;object-fit:cover}
-.dc-info{flex:1;min-width:0}
-.dc-name{font-family:'El Messiri';font-weight:700;font-size:18px;color:var(--plum-ink)}
-.dc-meta{font-size:12px;color:var(--ink-soft);font-weight:600;margin-top:2px}
-.dc-score{text-align:center;flex-shrink:0}
-.dc-score .sn2{font-family:'El Messiri';font-weight:700;font-size:30px;line-height:1}
-.dc-score .st2{font-size:11px;font-weight:800;margin-top:3px;padding:2px 9px;border-radius:100px}
-.chev{width:20px;height:20px;stroke:var(--ink-soft);fill:none;stroke-width:2.2;flex-shrink:0;transition:.25s}
-.dc.open .chev{transform:rotate(180deg)}
-.dc-body{max-height:0;overflow:hidden;transition:max-height .38s ease}
-.dc.open .dc-body{max-height:1400px}
-.dc-inner{padding:4px 18px 22px;border-top:1px dashed var(--line)}
-.pillars{margin-top:14px;display:flex;flex-direction:column;gap:11px}
-.pillar .plt{display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:5px}
-.pillar .plt .pv{color:var(--ink-soft)}
-.bar{height:8px;border-radius:100px;background:var(--paper);overflow:hidden}
-.bar i{display:block;height:100%;border-radius:100px;background:var(--plum);width:0;transition:width .9s cubic-bezier(.3,1,.4,1)}
-.dc-facts{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.df{flex:1;min-width:100px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:11px;text-align:center}
-.df b{font-family:'El Messiri';font-weight:700;font-size:17px;color:var(--plum-ink);display:block}
-.df span{font-size:11px;color:var(--ink-soft);font-weight:600}
-.dc-note{margin-top:11px;background:var(--amber-soft);border-right:3px solid var(--amber);border-radius:8px;padding:10px 12px;font-size:12.5px;color:#7a5310;font-weight:600}
-/* projects */
-.projs-title{font-size:14.5px;font-weight:700;margin:16px 0 10px;display:flex;align-items:center;gap:7px}
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
-.pj{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--card)}
-.pj-img{height:110px;background:#e9e3d8 center/cover;position:relative}
-.pj-img .pbadge{position:absolute;top:7px;right:7px;font-size:10px;font-weight:800;padding:3px 8px;border-radius:100px;color:#fff}
-.pj-info{padding:10px 12px}
-.pj-name{font-weight:700;font-size:13.5px}
-.pj-loc{font-size:11px;color:var(--ink-soft);font-weight:600;margin-top:1px}
-.pj-price{font-family:'El Messiri';font-weight:700;font-size:14px;color:var(--plum-ink);margin-top:7px}
-.pj-install{font-size:11.5px;color:var(--lime-deep);font-weight:700;margin-top:2px}
-/* contact reveal */
-.dc-contact{margin-top:14px;background:var(--lime-soft);border:1.5px solid var(--lime);border-radius:12px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.dc-contact .ct{font-size:13.5px;font-weight:700;color:var(--lime-deep)}
-.reveal-num{font-family:'Tajawal';font-weight:700;font-size:13px;background:var(--plum-ink);color:#fff;border:none;padding:9px 15px;border-radius:10px}
-.num-shown{font-family:'El Messiri';font-weight:700;font-size:17px;color:var(--plum-ink);direction:ltr;display:inline-block}
-.dc-share{display:flex;gap:8px;margin-top:12px}
-.dc-share button{flex:1;font-family:'Tajawal';font-weight:700;font-size:12.5px;padding:9px;border-radius:11px;border:none}
-.swa{background:#25D366;color:#fff}.scopy{background:var(--lime-soft);color:var(--lime-deep);border:1px solid var(--lime)}
+  /* ===== ANALYZER ===== */
+  .form-card{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:30px;margin:20px 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  .field{margin-bottom:18px}.field label{display:block;font-weight:700;font-size:14px;margin-bottom:8px}.field .hint{font-weight:500;color:var(--ink-soft);font-size:12px}
+  .input,select{width:100%;font-family:'Tajawal';font-weight:700;font-size:16px;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;transition:border .15s}
+  .input:focus,select:focus{border-color:var(--plum);outline:none;background:#fff}
+  select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236C6580' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 14px center}
+  .seg{display:flex;gap:8px;background:var(--paper);padding:5px;border-radius:13px;border:1.5px solid var(--line);flex-wrap:wrap}
+  .seg button{flex:1;min-width:90px;font-family:'Tajawal';font-weight:700;font-size:14px;border:none;background:transparent;color:var(--ink-soft);padding:10px;border-radius:9px;cursor:pointer;transition:all .15s}
+  .seg button.on{background:var(--plum);color:#fff;box-shadow:0 4px 12px rgba(106,69,201,.22)}
+  .divider{height:1px;background:var(--line);margin:8px 0 22px}
+  .legend{font-weight:700;font-size:13px;color:var(--lime-deep);background:var(--lime-soft);display:inline-block;padding:4px 12px;border-radius:8px;margin-bottom:16px}
+  .analyze-btn{width:100%;font-family:'Tajawal';font-weight:800;font-size:18px;color:#fff;background:var(--plum);border:none;border-radius:15px;padding:17px;cursor:pointer;box-shadow:0 10px 26px rgba(106,69,201,.3);transition:transform .15s}.analyze-btn:hover{transform:translateY(-2px)}
+  #anaReport{display:none}#anaReport.show{display:block;animation:fade .5s ease}
+  .verdict-hero{border-radius:24px;padding:34px;color:#fff;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;text-align:center}
+  .verdict-hero .vtag{font-weight:700;font-size:14px;opacity:.85;margin-bottom:6px}.verdict-hero h2{color:#fff;font-size:clamp(30px,6vw,46px);font-weight:700}
+  .verdict-hero p{font-size:16px;opacity:.92;max-width:52ch;margin:12px auto 0;font-weight:500}
+  .v-go{background:linear-gradient(150deg,#4e7a12,#3c5e0e)}.v-care{background:linear-gradient(150deg,#a9711a,#7c5210)}.v-stop{background:linear-gradient(150deg,#b8402b,#8c2e1e)}
+  .score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+  .scard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+  .scard .stitle{font-weight:700;font-size:15px;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
+  .ring{position:relative;width:104px;height:104px;margin:16px auto 10px}.ring svg{transform:rotate(-90deg)}
+  .ring .val{position:absolute;inset:0;display:grid;place-items:center;font-family:'El Messiri';font-weight:700;font-size:30px;color:var(--plum-ink)}
+  .scard .verdict-line{text-align:center;font-weight:700;font-size:16px;margin-top:2px}.scard .detail{font-size:13.5px;color:var(--ink-soft);text-align:center;margin-top:8px;font-weight:500;line-height:1.6}
+  .both-card{background:var(--plum-ink);color:#fff;border-radius:20px;padding:24px 26px;margin-top:16px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .both-card .bicon{width:50px;height:50px;border-radius:13px;background:rgba(174,221,28,.16);display:grid;place-items:center;flex-shrink:0;font-size:24px}
+  .both-card .btext{flex:1;min-width:200px}.both-card h3{color:#fff;font-size:20px;margin-bottom:3px}.both-card p{font-size:14.5px;color:rgba(255,255,255,.78);font-weight:500}
+  .numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+  .nbox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}.nbox .nb{font-family:'El Messiri';font-weight:700;font-size:26px;color:var(--plum)}.nbox .nl{font-size:13px;color:var(--ink-soft);font-weight:600;margin-top:4px}
+  .checklist{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;margin-top:16px;box-shadow:var(--shadow)}
+  .checklist h3{font-size:18px;margin-bottom:4px}.checklist .csub{font-size:14px;color:var(--ink-soft);margin-bottom:18px;font-weight:500}
+  .citem{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-bottom:1px dashed var(--line)}.citem:last-child{border-bottom:none}
+  .citem .ci{width:26px;height:26px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;font-size:14px;font-weight:800}
+  .citem.warn .ci{background:var(--amber-soft);color:var(--amber)}.citem.bad .ci{background:var(--coral-soft);color:var(--coral)}.citem.ok .ci{background:var(--lime-soft);color:var(--lime-deep)}
+  .citem .ct{font-size:15px;font-weight:600;color:var(--ink)}.citem .cd{font-size:13.5px;color:var(--ink-soft);font-weight:500;margin-top:2px}
 
-/* ── ANALYZER ── */
-.az-form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-top:18px;box-shadow:var(--sh)}
-.az-leg{display:inline-block;font-weight:700;font-size:12px;color:var(--lime-deep);background:var(--lime-soft);padding:3px 11px;border-radius:8px;margin-bottom:13px}
-.field{margin-bottom:15px}
-.field label{display:block;font-weight:700;font-size:13.5px;margin-bottom:6px}
-.field .hint{font-weight:500;color:var(--ink-soft);font-size:11.5px}
-.inp{width:100%;font-family:'Tajawal';font-weight:700;font-size:15px;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;transition:.15s}
-.inp:focus{outline:none;border-color:var(--plum);background:#fff}
-select.inp{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236C6580' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 12px center}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.seg{display:flex;gap:6px;background:var(--paper);padding:4px;border-radius:12px;border:1.5px solid var(--line);flex-wrap:wrap}
-.seg button{flex:1;min-width:78px;font-family:'Tajawal';font-weight:700;font-size:13px;border:none;background:transparent;color:var(--ink-soft);padding:9px 5px;border-radius:9px;transition:.15s}
-.seg button.on{background:var(--plum);color:#fff;box-shadow:0 4px 12px rgba(106,69,201,.22)}
-.az-run{width:100%;font-family:'Tajawal';font-weight:800;font-size:17px;color:#fff;background:var(--plum);border:none;border-radius:13px;padding:15px;box-shadow:0 8px 24px rgba(106,69,201,.28);margin-top:6px}
-#azReport{display:none}#azReport.show{display:block;animation:fadeUp .5s ease}
-@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.verdict{border-radius:20px;padding:26px;color:#fff;box-shadow:var(--sh-lg);text-align:center;position:relative;overflow:hidden}
-.verdict::before{content:"";position:absolute;top:-60px;left:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 55%)}
-.v-go{background:linear-gradient(150deg,#4e7a12,#3a5c0e)}.v-care{background:linear-gradient(150deg,#a9711a,#7c5210)}.v-stop{background:linear-gradient(150deg,#b8402b,#8c2e1e)}
-.verdict h2{color:#fff;font-size:clamp(24px,5vw,38px);position:relative}.verdict p{font-size:14.5px;opacity:.9;max-width:50ch;margin:10px auto 0;font-weight:500;position:relative}
-.rings{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-.rcard{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:var(--sh);text-align:center}
-.rcard .rt{font-size:13px;font-weight:700;color:var(--ink-soft);margin-bottom:11px}
-.rw{position:relative;width:92px;height:92px;margin:0 auto 7px}
-.rw svg{transform:rotate(-90deg)}
-.rv{position:absolute;inset:0;display:grid;place-items:center;font-family:'El Messiri';font-weight:700;font-size:25px;color:var(--plum-ink)}
-.rcard .rl{font-weight:700;font-size:14px}.rcard .rd{font-size:12px;color:var(--ink-soft);margin-top:4px;font-weight:500;line-height:1.6}
-.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-.nbox{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px;text-align:center}
-.nbox .nb{font-family:'El Messiri';font-weight:700;font-size:22px;color:var(--plum)}.nbox .nl{font-size:11.5px;color:var(--ink-soft);font-weight:600;margin-top:3px}
-.chklist{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:20px;margin-top:12px}
-.chklist h3{font-size:16px;margin-bottom:3px}.chklist .cs{font-size:12.5px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
-.ci{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line)}
-.ci:last-child{border-bottom:none}
-.cic{width:23px;height:23px;border-radius:7px;display:grid;place-items:center;flex-shrink:0;font-size:12px;font-weight:800}
-.ci.ok .cic{background:var(--lime-soft);color:var(--lime-deep)}.ci.warn .cic{background:var(--amber-soft);color:var(--amber)}.ci.bad .cic{background:var(--coral-soft);color:var(--coral)}
-.ci .ct{font-size:13.5px;font-weight:700}.ci .cd{font-size:12px;color:var(--ink-soft);margin-top:2px;font-weight:500}
-.redo-btn{font-family:'Tajawal';font-weight:700;font-size:14px;background:none;border:1.5px solid var(--line);color:var(--plum-ink);padding:10px 18px;border-radius:12px;margin-top:16px}
+  /* ===== DEVELOPERS ===== */
+  .dev-howto{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px;background:var(--plum-soft);border-radius:14px;padding:14px 18px}
+  .dh{display:flex;align-items:center;gap:9px;flex:1;min-width:150px;font-size:14px;font-weight:700;color:var(--plum-ink)}
+  .dhn{width:24px;height:24px;border-radius:7px;background:var(--plum-ink);color:#fff;display:grid;place-items:center;font-family:'El Messiri';font-size:13px;font-weight:700;flex-shrink:0}
+  .toolbar{display:flex;gap:10px;margin:0 0 22px;flex-wrap:wrap;align-items:center}
+  .search{flex:1;min-width:200px;position:relative}
+  .search input{width:100%;font-family:'Tajawal';font-weight:600;font-size:15px;padding:13px 44px 13px 16px;border-radius:13px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+  .search input:focus{outline:none;border-color:var(--plum)}
+  .search svg{position:absolute;right:15px;top:50%;transform:translateY(-50%);width:18px;height:18px;stroke:var(--ink-soft);fill:none;stroke-width:2}
+  .sort{font-family:'Tajawal';font-weight:700;font-size:14px;padding:13px 16px;border-radius:13px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+  .dev{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);margin-bottom:14px;overflow:hidden;transition:box-shadow .2s}.dev:hover{box-shadow:var(--shadow-lg)}
+  .dev-head{display:flex;align-items:center;gap:18px;padding:20px 22px;cursor:pointer}
+  .dev-logo{width:54px;height:54px;border-radius:14px;flex-shrink:0;display:grid;place-items:center;font-family:'El Messiri';font-weight:700;font-size:18px;color:#fff;text-align:center;line-height:1}
+  .dev-main{flex:1;min-width:0}.dev-name{font-family:'El Messiri';font-weight:700;font-size:20px;color:var(--plum-ink)}.dev-meta{font-size:13px;color:var(--ink-soft);font-weight:600;margin-top:2px}
+  .dev-score{text-align:center;flex-shrink:0}.dev-score .sc{font-family:'El Messiri';font-weight:700;font-size:34px;line-height:1}.dev-score .tier{font-size:12px;font-weight:700;margin-top:2px}
+  .chev{width:20px;height:20px;stroke:var(--ink-soft);fill:none;stroke-width:2.2;flex-shrink:0;transition:transform .25s}.dev.open .chev{transform:rotate(180deg)}
+  .dev-body{max-height:0;overflow:hidden;transition:max-height .35s ease}.dev.open .dev-body{max-height:820px}
+  .dev-inner{padding:4px 22px 24px;border-top:1px dashed var(--line)}
+  .pillars{margin-top:18px;display:flex;flex-direction:column;gap:14px}
+  .pillar .pl-top{display:flex;justify-content:space-between;font-size:14px;font-weight:700;margin-bottom:6px}.pillar .pl-top .v{color:var(--ink-soft)}
+  .bar{height:9px;border-radius:100px;background:var(--paper);overflow:hidden}.bar i{display:block;height:100%;border-radius:100px;background:var(--plum);width:0;transition:width .8s cubic-bezier(.3,1,.4,1)}
+  .facts{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .fact{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13px}.fact b{display:block;font-family:'El Messiri';font-weight:700;font-size:17px;color:var(--plum-ink)}
+  .dnote{margin-top:16px;background:var(--amber-soft);border-right:3px solid var(--amber);border-radius:8px;padding:11px 14px;font-size:13.5px;color:#7a5310;font-weight:600}
+  .src{margin-top:14px;font-size:12.5px;color:var(--ink-soft)}.src .srclink{color:var(--plum);font-weight:700;cursor:pointer}
+  .reviews{margin-top:16px;background:var(--plum-soft);border-radius:12px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .reviews .rt{font-size:13.5px;font-weight:600;color:var(--plum-ink)}
+  .reviews button{font-family:'Tajawal';font-weight:700;font-size:13px;background:var(--plum-ink);color:#fff;border:none;padding:9px 15px;border-radius:10px;cursor:pointer}
+  .method{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;margin:30px 0}
+  .method h3{font-size:19px;margin-bottom:10px}.method p{font-size:14.5px;color:var(--ink-soft);font-weight:500;margin-bottom:10px}
+  .method .mpills{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.method .mpill{font-size:12.5px;font-weight:700;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:6px 11px;color:var(--ink)}
 
-/* ── ADVISOR ── */
-.adv-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;margin-top:18px;box-shadow:var(--sh);max-width:660px;margin-inline:auto}
-.aqn{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px;margin-bottom:10px}
-.aqn .n{width:25px;height:25px;border-radius:8px;background:var(--plum-ink);color:#fff;display:grid;place-items:center;font-family:'El Messiri';font-size:13px;font-weight:700}
-.amount-row{position:relative;margin-bottom:20px}
-.amount-row input{width:100%;font-family:'El Messiri';font-weight:700;font-size:27px;color:var(--plum-ink);background:var(--paper);border:1.5px solid var(--line);border-radius:13px;padding:13px 14px 13px 62px;transition:.15s}
-.amount-row input:focus{outline:none;border-color:var(--plum);background:#fff}
-.amount-row .cur{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-weight:700;color:var(--ink-soft);font-size:14px}
-.goals{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-bottom:20px}
-.goal{background:var(--paper);border:1.5px solid var(--line);border-radius:13px;padding:14px 11px;cursor:pointer;text-align:center;transition:.15s;user-select:none}
-.goal:hover{border-color:#dcd3c6}.goal.on{border-color:var(--plum);background:var(--plum-soft)}
-.goal .gi{font-size:22px}.goal .gt{font-weight:700;font-size:13.5px;margin-top:5px}.goal .gd{font-size:11px;color:var(--ink-soft);font-weight:600;margin-top:2px}
-.adv-run{width:100%;font-family:'Tajawal';font-weight:800;font-size:16px;color:#fff;background:var(--plum);border:none;border-radius:13px;padding:14px;box-shadow:0 8px 24px rgba(106,69,201,.28)}
-#advResult{display:none;max-width:660px;margin-inline:auto}#advResult.show{display:block;animation:fadeUp .5s ease}
-.pick{background:var(--card);border:2px solid var(--lime);border-radius:20px;box-shadow:var(--sh-lg);overflow:hidden;position:relative}
-.pick-badge{position:absolute;top:0;right:18px;background:var(--lime);color:var(--plum-ink);font-weight:800;font-size:12px;padding:5px 13px;border-radius:0 0 10px 10px;z-index:2}
-.pick-top{padding:24px 20px 16px;color:#fff;position:relative;overflow:hidden}
-.pick-top::after{content:"";position:absolute;top:-60px;left:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.13),transparent 60%)}
-.pick-loc{font-size:12px;font-weight:700;opacity:.88;position:relative}
-.pick-title{font-family:'El Messiri';font-weight:700;font-size:22px;color:#fff;margin-top:3px;position:relative}
-.pick-dev{font-size:12.5px;opacity:.9;margin-top:3px;position:relative}.pick-dev .sc{background:rgba(255,255,255,.2);padding:1px 8px;border-radius:6px;font-weight:700}
-.pick-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.kb{background:var(--card);padding:15px 12px;text-align:center}
-.kb .kv{font-family:'El Messiri';font-weight:700;font-size:21px;color:var(--plum-ink)}.kb .kv.lime{color:var(--lime-deep)}.kb .kl{font-size:11px;color:var(--ink-soft);font-weight:600;margin-top:2px}
-.pick-why{padding:16px 20px}.pick-why .wt{font-weight:700;font-size:13.5px;display:flex;align-items:center;gap:7px;margin-bottom:5px}.pick-why p{font-size:13.5px;color:var(--ink);font-weight:500;line-height:1.7}
-.rbar-row{display:flex;align-items:center;gap:10px;margin-top:13px;background:var(--paper);border-radius:11px;padding:11px 13px}
-.rbar-row .rl{font-size:11.5px;font-weight:700;color:var(--ink-soft);white-space:nowrap}
-.rbar{flex:1;height:7px;border-radius:100px;background:linear-gradient(90deg,var(--lime),var(--amber) 65%,var(--coral));position:relative}
-.rdot{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--plum-ink);transform:translate(50%,-50%);box-shadow:0 2px 5px rgba(0,0,0,.18)}
-.pick-btns{display:flex;gap:8px;padding:4px 20px 20px;flex-wrap:wrap}
-.pick-btns button{flex:1;min-width:120px;font-family:'Tajawal';font-weight:700;font-size:13.5px;border-radius:12px;padding:12px;border:none}
-.pb-main{background:var(--plum);color:#fff}.pb-alt{background:transparent;border:1.5px solid var(--line);color:var(--plum-ink)}
-.alts-list{margin-top:18px}.alts-list h3{font-size:14px;margin-bottom:9px;color:var(--ink-soft)}
-.alt-row{display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:12px 15px;margin-bottom:8px}
-.alt-logo{width:38px;height:38px;border-radius:10px;flex-shrink:0;display:grid;place-items:center;color:#fff;font-family:'El Messiri';font-weight:700;font-size:12px}
-.alt-info{flex:1;min-width:0}.alt-name{font-weight:700;font-size:13.5px}.alt-sub{font-size:11.5px;color:var(--ink-soft);font-weight:600}
-.alt-ret{text-align:left;flex-shrink:0}.av{font-family:'El Messiri';font-weight:700;font-size:17px;color:var(--lime-deep)}.ay{font-size:11px;color:var(--ink-soft);font-weight:600}
-.adv-redo{font-family:'Tajawal';font-weight:700;font-size:14px;background:none;border:1.5px solid var(--line);color:var(--plum-ink);padding:10px 18px;border-radius:12px;margin:16px auto 0;display:block}
+  footer{background:var(--paper);border-top:1px solid var(--line);padding:38px 0;margin-top:10px}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .foot .logo{font-size:21px}.foot p{font-size:12.5px;color:var(--ink-soft);max-width:54ch;line-height:1.7}
 
-/* ── WA ── */
-.wa-w{position:fixed;bottom:22px;left:22px;z-index:200;font-family:'Tajawal',sans-serif}
-.wa-fab{position:relative;width:56px;height:56px;border-radius:50%;background:#25D366;border:none;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 24px rgba(37,211,102,.42);transition:.2s}
-.wa-fab:hover{transform:scale(1.07)}
-.wa-fab svg{width:30px;height:30px}
-.wa-fab::before{content:"";position:absolute;inset:0;border-radius:50%;background:#25D366;z-index:-1;animation:wap 2.4s infinite}
-@keyframes wap{0%{transform:scale(1);opacity:.55}70%{transform:scale(1.7);opacity:0}100%{opacity:0}}
-.wa-fab.bnc{animation:wab 1s ease}
-@keyframes wab{0%,100%{transform:translateY(0)}30%{transform:translateY(-9px)}60%{transform:translateY(-3px)}}
-.wa-tip{position:absolute;bottom:5px;left:70px;white-space:nowrap;background:var(--card);color:var(--ink);font-weight:700;font-size:12.5px;padding:9px 32px 9px 12px;border-radius:12px 12px 12px 4px;box-shadow:var(--sh-lg);opacity:0;transform:translateX(10px);pointer-events:none;transition:.35s}
-.wa-tip.show{opacity:1;transform:none;pointer-events:auto}
-.wa-tx{position:absolute;left:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--ink-soft);font-size:14px;cursor:pointer;line-height:1}
-.wa-panel{position:absolute;bottom:70px;left:0;width:310px;max-width:calc(100vw - 44px);background:var(--card);border:1px solid var(--line);border-radius:17px;box-shadow:var(--sh-lg);overflow:hidden;transform-origin:bottom left;transform:scale(.5);opacity:0;pointer-events:none;transition:all .25s cubic-bezier(.34,1.4,.4,1)}
-.wa-panel.open{transform:scale(1);opacity:1;pointer-events:auto}
-.wa-head{background:#075E54;color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
-.wa-ava{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:17px;flex-shrink:0}
-.wa-meta .wn{font-family:'El Messiri';font-weight:700;font-size:15px}
-.wa-meta .ws2{font-size:10.5px;opacity:.85;display:flex;align-items:center;gap:4px}
-.ws2 .dot{width:6px;height:6px;border-radius:50%;background:var(--lime);display:inline-block}
-.wa-x{background:none;border:none;color:#fff;font-size:19px;cursor:pointer;line-height:1;opacity:.8;margin-right:auto}
-.wa-body{padding:14px;background:#ECE5DD;max-height:200px;overflow-y:auto}
-.wa-bub{background:#fff;border-radius:4px 12px 12px 12px;padding:9px 12px;font-size:12.5px;font-weight:500;color:var(--ink);line-height:1.6;box-shadow:0 1px 2px rgba(0,0,0,.08);max-width:88%}
-.wa-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
-.wa-chip{background:#fff;border:1px solid #d6e8d0;color:#075E54;font-family:'Tajawal';font-weight:700;font-size:11.5px;padding:6px 10px;border-radius:100px;cursor:pointer;transition:.15s}
-.wa-chip:hover{background:#dcf8c6}
-.wa-ir{display:flex;gap:7px;padding:9px;background:var(--card);border-top:1px solid var(--line)}
-.wa-ir input{flex:1;border:1.5px solid var(--line);border-radius:100px;padding:8px 12px;font-family:'Tajawal';font-weight:600;font-size:13px;background:var(--paper);color:var(--ink)}
-.wa-ir input:focus{outline:none;border-color:#25D366}
-.wa-ir button{width:38px;height:38px;border-radius:50%;background:#25D366;color:#fff;border:none;cursor:pointer;font-size:15px;flex-shrink:0;transform:scaleX(-1)}
+  @media(max-width:860px){.home-hero-inner,.emp-grid{grid-template-columns:1fr;gap:32px}.prot-grid,.ogrid,.score-grid,.numbers{grid-template-columns:1fr}.meter-card{order:-1}}
+  @media(max-width:600px){.goals{grid-template-columns:1fr}.grid2,.grid3{grid-template-columns:1fr}.dev-meta{display:none}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 
-footer{background:var(--paper);border-top:1px solid var(--line);padding:30px 0}
-.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.foot-logo{font-family:'El Messiri';font-weight:700;font-size:20px;color:var(--plum-ink);display:flex;align-items:center;gap:8px;cursor:pointer}
-.foot p{font-size:12px;color:var(--ink-soft);max-width:52ch;line-height:1.7}
+  /* WhatsApp floating widget */
+  .wa-widget{position:fixed;bottom:22px;left:22px;z-index:200;font-family:'Tajawal',sans-serif}
+  .wa-fab{position:relative;width:60px;height:60px;border-radius:50%;background:#25D366;border:none;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 24px rgba(37,211,102,.45);transition:transform .2s}
+  .wa-fab:hover{transform:scale(1.07)}
+  .wa-fab svg{width:34px;height:34px}
+  .wa-fab::before{content:"";position:absolute;inset:0;border-radius:50%;background:#25D366;z-index:-1;animation:waPulse 2.4s infinite}
+  @keyframes waPulse{0%{transform:scale(1);opacity:.55}70%{transform:scale(1.7);opacity:0}100%{opacity:0}}
+  .wa-fab.bounce{animation:waBounce 1s ease}
+  @keyframes waBounce{0%,100%{transform:translateY(0)}30%{transform:translateY(-9px)}60%{transform:translateY(-3px)}}
+  .wa-tip{position:absolute;bottom:8px;left:74px;white-space:nowrap;background:var(--card);color:var(--ink);font-weight:700;font-size:13.5px;padding:11px 36px 11px 15px;border-radius:14px 14px 14px 4px;box-shadow:var(--shadow-lg);opacity:0;transform:translateX(10px);pointer-events:none;transition:all .35s}
+  .wa-tip.show{opacity:1;transform:translateX(0);pointer-events:auto}
+  .wa-tip-x{position:absolute;left:9px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--ink-soft);font-size:16px;cursor:pointer;line-height:1}
+  .wa-panel{position:absolute;bottom:74px;left:0;width:330px;max-width:calc(100vw - 44px);background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);overflow:hidden;transform-origin:bottom left;transform:scale(.5);opacity:0;pointer-events:none;transition:all .25s cubic-bezier(.34,1.4,.4,1)}
+  .wa-panel.open{transform:scale(1);opacity:1;pointer-events:auto}
+  .wa-head{background:#075E54;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:11px}
+  .wa-ava{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:20px;flex-shrink:0}
+  .wa-meta{flex:1;min-width:0}
+  .wa-name{font-family:'El Messiri',serif;font-weight:700;font-size:17px}
+  .wa-status{font-size:11.5px;opacity:.85;display:flex;align-items:center;gap:5px}
+  .wa-status .dot{width:7px;height:7px;border-radius:50%;background:#AEDD1C;display:inline-block}
+  .wa-x{background:none;border:none;color:#fff;font-size:22px;cursor:pointer;line-height:1;opacity:.8}
+  .wa-body{padding:18px 16px;background:#ECE5DD;max-height:230px;overflow-y:auto}
+  .wa-bubble{background:#fff;border-radius:4px 14px 14px 14px;padding:11px 14px;font-size:13.5px;font-weight:500;color:#2A2236;line-height:1.6;box-shadow:0 1px 2px rgba(0,0,0,.1);max-width:88%}
+  .wa-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+  .wa-chip{background:#fff;border:1px solid #d6e8d0;color:#075E54;font-family:'Tajawal';font-weight:700;font-size:12.5px;padding:8px 12px;border-radius:100px;cursor:pointer;transition:all .15s}
+  .wa-chip:hover{background:#dcf8c6}
+  .wa-input{display:flex;gap:8px;padding:11px;background:var(--card);border-top:1px solid var(--line)}
+  .wa-input input{flex:1;border:1.5px solid var(--line);border-radius:100px;padding:10px 15px;font-family:'Tajawal';font-weight:600;font-size:14px;background:var(--paper);color:var(--ink)}
+  .wa-input input:focus{outline:none;border-color:#25D366}
+  .wa-input button{width:42px;height:42px;border-radius:50%;background:#25D366;color:#fff;border:none;cursor:pointer;font-size:17px;flex-shrink:0;transform:scaleX(-1)}
+  @media(max-width:480px){.wa-tip{display:none}.wa-widget{bottom:18px;left:18px}}
+  @media (prefers-reduced-motion:reduce){.wa-fab::before{animation:none}.wa-fab.bounce{animation:none}}
 
-@media(max-width:860px){.hero-inner,.who-grid,.q-grid{grid-template-columns:1fr;gap:28px}.steps-card{order:-1}.rings,.nums{grid-template-columns:1fr 1fr}.who-photos{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.goals{grid-template-columns:1fr}.g2{grid-template-columns:1fr}.rings{grid-template-columns:1fr}.photo-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:820px){.nav-links{display:none}.burger{display:grid}}
-@media(max-width:480px){.wa-tip{display:none}.wa-w{bottom:16px;left:16px}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<!-- REGISTRATION WALL -->
-<div class="wall" id="wall">
-  <div class="wall-box">
-    <div class="wall-logo">
-      <svg viewBox="0 0 24 26" fill="none"><path d="M12 1l10 4v8c0 6.5-4.3 10.5-10 12C6.3 23.5 2 19.5 2 13V5z" fill="#241241"/><path d="M8 13l3 3 5-6" stroke="#AEDD1C" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      رُشد
-    </div>
-    <h2>سجّل دلوقتي واستخدم المنصة مجاناً</h2>
-    <p class="sub">رُشد بيساعدك تعرف المطوّر قبل ما تدفع، وتحلّل صفقتك، وتعرف فين تحط فلوسك. مجاني تماماً — بس محتاج اسمك ورقمك الأول.</p>
-    <div class="wall-form">
-      <input id="wName" type="text" placeholder="اسمك الكريم" autocomplete="name">
-      <input id="wPhone" type="tel" inputmode="tel" placeholder="رقم موبايلك (01xxxxxxxxx)" autocomplete="tel">
-      <button class="wall-btn" id="wSubmit">ابدأ دلوقتي مجاناً 🚀</button>
-    </div>
-    <div class="wall-ok" id="wOk">تمام يا <span id="wOkName"></span>! أهلاً بيك في رُشد ✅</div>
-    <p class="wall-fine">مش بنبيع بياناتك ولا بنبعتلك إعلانات. وعد.</p>
-  </div>
-</div>
-
-<header>
-  <div class="wrap nav">
-    <div class="logo" data-view="home">
-      <svg viewBox="0 0 24 26" fill="none"><path d="M12 1l10 4v8c0 6.5-4.3 10.5-10 12C6.3 23.5 2 19.5 2 13V5z" fill="#241241"/><path d="M8 13l3 3 5-6" stroke="#AEDD1C" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      رُشد
-    </div>
-    <nav class="nav-links" id="navLinks">
-      <a data-view="developers">سكور المطوّرين</a>
-      <a data-view="analyzer">حلّل صفقتك</a>
-      <a data-view="advisor">أحط فلوسي فين؟</a>
-    </nav>
-    <div class="nav-user" id="navUser" style="display:none">
-      <span class="nav-name" id="navName"></span>
-      <button class="nav-out" id="navOut">خروج</button>
-    </div>
-    <button class="burger" id="burger" aria-label="القائمة"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg></button>
-  </div>
-  <nav class="mob-menu" id="mobMenu">
-    <a data-view="developers">⭐ سكور المطوّرين</a>
-    <a data-view="analyzer">🔍 حلّل صفقتك</a>
+<header><div class="wrap nav">
+  <div class="logo" data-view="home"><svg class="shield" viewBox="0 0 24 26" fill="none"><path d="M12 1l10 4v8c0 6.5-4.3 10.5-10 12C6.3 23.5 2 19.5 2 13V5l10-4z" fill="#241241"/><path d="M8 13l3 3 5-6" stroke="#AEDD1C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>رُشد</div>
+  <nav class="menu" id="menu">
     <a data-view="advisor">🧭 أحط فلوسي فين؟</a>
+    <a data-view="opportunities">🏠 فرص متاحة</a>
+    <a data-view="analyzer">🔍 حلّل صفقتك</a>
+    <a data-view="developers">⭐ سكور المطوّرين</a>
   </nav>
-</header>
+  <a class="nav-cta" data-view="developers">سكور المطوّر</a>
+  <button class="burger" id="burger" aria-label="القائمة"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg></button>
+</div></header>
 
 <main>
-<!-- HOME -->
+
+<!-- ============ HOME ============ -->
 <section class="view active" id="view-home">
-  <div class="hero">
-    <div class="hbg"></div>
-    <div class="wrap hero-inner">
-      <div class="hero-left">
-        <span class="ey"><span class="pulse"></span>قبل ما توقّع وتدفع</span>
-        <h1>عايز تستثمر في عقار؟ اعرف <span class="hl">فين وبأمان قد إيه</span> وهتكسب كام.</h1>
-        <p class="hero-lead">رُشد بيجاوبك على ٤ أسئلة قبل ما تدفع جنيه: <b>فين تحط فلوسك؟ أمانها إيه؟ هتكسب كام ومتى؟ والمطوّر ده مين وإيه مشاريعه؟</b></p>
+  <div class="home-hero">
+    <div class="hero-glow"></div>
+    <div class="wrap home-hero-inner">
+      <div class="reveal">
+        <span class="eyebrow"><span class="pulse"></span>قبل ما توقّع وتدفع جنيه</span>
+        <h1>عايز تشتري شقة أو عقار؟<br>اعرف <span class="hl">المطوّر ده آمن ولا لأ</span><br>قبل ما تدفع.</h1>
+        <p class="lead">رُشد بيديك تقرير محايد عن أي مطوّر: سجل تسليمه، مخاطر صفقتك، والعائد المتوقع على فلوسك — من غير ما حد يبيعلك حاجة أو ياخد منك عمولة.</p>
+        <div class="how-strip">
+          <div class="hs"><span class="hn">١</span><span class="ht">اختار المطوّر اللي قدامك</span></div>
+          <div class="hs-arrow">←</div>
+          <div class="hs"><span class="hn">٢</span><span class="ht">شوف سكوره وسجل تسليمه</span></div>
+          <div class="hs-arrow">←</div>
+          <div class="hs"><span class="hn">٣</span><span class="ht">ادفع بثقة أو ابعد بأمان</span></div>
+        </div>
         <div class="hero-actions">
-          <button class="btn btn-primary" data-view="developers">شوف سكور المطوّر 🛡️</button>
+          <button class="btn btn-primary" data-view="developers">شوف سكور المطوّر دلوقتي 🛡️</button>
           <button class="btn btn-ghost" data-view="analyzer">حلّل صفقتك</button>
         </div>
-        <div class="hero-trust">
-          <span><span class="ic">✓</span>مجاني ومحايد</span>
-          <span><span class="ic">✓</span>مبناخدش منك عمولة</span>
-          <span><span class="ic">✓</span>بيانات موثّقة</span>
+        <div class="hero-foot">
+          <span><span class="ic">✓</span> مجاني ومحايد — مبناخدش منك عمولة</span>
+          <span><span class="ic">✓</span> بيانات موثّقة بمصادرها</span>
+          <span><span class="ic">✓</span> بالعربي وبلغة تفهمها</span>
         </div>
       </div>
-      <div class="steps-card">
-        <div class="sc-title">⚡ إزاي رُشد بيشتغل؟</div>
-        <div class="sr"><div class="sn">١</div><div><div class="st">ابحث عن المطوّر اللي قدامك</div><div class="sd">شوف سكوره من ١٠٠، سجل تسليمه، ومشاريعه وأسعارها</div></div></div>
-        <div class="sr"><div class="sn">٢</div><div><div class="st">حلّل الصفقة اللي قدامك</div><div class="sd">السعر، المنطقة، الحالة — واعرف العائد والمخاطر</div></div></div>
-        <div class="sr"><div class="sn">٣</div><div><div class="st">اعرف تحط فلوسك فين</div><div class="sd">قوللنا ميزانيتك وهدفك وهنرشّحلك أنسب فرصة</div></div></div>
-        <div class="sr"><div class="sn">٤</div><div><div class="st">ادفع بثقة أو ابعد بأمان</div><div class="sd">القرار قرارك — إحنا بنديك الصورة الكاملة</div></div></div>
-        <button class="steps-cta" data-view="developers">ابدأ دلوقتي</button>
+      <div class="meter-card reveal">
+        <div class="meter-intro">🤔 <b>مش عارف تبدأ منين؟</b> علّم على اللي ينطبق على صفقتك دي، وشوف فلوسك في أمان ولا لأ.</div>
+        <div class="mtitle">🛡️ درجة أمان فلوسك في الصفقة</div>
+        <div class="meter-val" id="mVal">٥٠<small>٪</small></div>
+        <div class="meter-track"><div class="meter-marker" id="mMark"></div></div>
+        <div class="meter-ends"><span class="e1">خطر</span><span class="e2">آمن</span></div>
+        <div class="meter-verdict" id="mVerd" style="color:var(--ink-soft)">علّم على اللي ينطبق على صفقتك ↓</div>
+        <div class="meter-q">إيه اللي حاصل في الصفقة اللي قدامك؟</div>
+        <div class="toggles" id="togs">
+          <div class="tog" data-w="20" data-type="g"><span class="b"><svg viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 3"/></svg></span><span class="t">المطوّر معروف وبيسلّم في معاده</span></div>
+          <div class="tog" data-w="16" data-type="g"><span class="b"><svg viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 3"/></svg></span><span class="t">السعر زي أسعار وحدات شبهها في المنطقة</span></div>
+          <div class="tog" data-w="30" data-type="r"><span class="b"><svg viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 3"/></svg></span><span class="t">المطوّر اتأخر قبل كده / مش متأكد منه</span></div>
+          <div class="tog" data-w="26" data-type="r"><span class="b"><svg viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 3"/></svg></span><span class="t">بيستعجلوني أدفع قبل ما أتأكد من حاجة</span></div>
+        </div>
+        <span class="meter-cta" data-view="analyzer">ده فحص سريع · شوف التحليل الكامل لصفقتك →</span>
       </div>
     </div>
   </div>
 
-  <!-- WHO WE ARE with live photos -->
-  <section class="who-band" id="who">
-    <div class="wrap who-grid">
-      <div class="who-photos" id="whoPhotos">
-        <!-- photos injected from admin -->
-        <div style="grid-column:span 2;border-radius:14px;background:var(--plum-soft);height:180px;display:grid;place-items:center;color:var(--ink-soft);font-weight:700;font-size:14px">📸 صور الفريق والمكتب</div>
+  <section class="band empathy">
+    <div class="wrap emp-grid">
+      <div class="reveal">
+        <div class="seclabel"><span class="ln"></span><span class="tx">إحنا فاهمين موقفك</span></div>
+        <h2>دي مش "صفقة". دي تعب عمرك كله.</h2>
+        <p class="sub">عشان كده الخوف ده طبيعي، والأسئلة دي بتدور في دماغك ومحدش بيجاوب عليها بصدق:</p>
+        <ul class="emp-list">
+          <li><span class="qi">؟</span><span class="et">"لو غلطت، مفيش فلوس تانية أعوّض بيها. دي فرصتي الوحيدة."</span></li>
+          <li><span class="qi">؟</span><span class="et">"كل اللي بكلّمهم مصلحتهم إني أشتري — مين فيهم بيقولي الحقيقة؟"</span></li>
+          <li><span class="qi">؟</span><span class="et">"السعر ده عادي ولا بيضحكوا عليّا؟ المطوّر ده هيسلّم أصلاً؟"</span></li>
+        </ul>
       </div>
-      <div class="who-text">
-        <span class="ey">🏢 مين إحنا؟</span>
-        <h2>متخصّصين في حماية المستثمر العقاري.</h2>
-        <p id="whoDesc">رُشد منصة متخصصة في تحليل الاستثمار العقاري بشكل محايد. بنساعد المستثمرين يعرفوا الحقيقة الكاملة عن المطوّرين والصفقات قبل ما يدفعوا.</p>
-        <p>مش بياخدوا منك عمولة ومش بيبيعوا بياناتك. شغلتنا الوحيدة إنك تاخد قرار صح.</p>
-        <div class="who-stat">
-          <div class="ws"><b id="statDevs">٧+</b><span>مطوّر تحت الرادار</span></div>
-          <div class="ws"><b id="statOpp">٢٠+</b><span>فرصة محلّلة</span></div>
-          <div class="ws"><b id="statUsers">١٠٠+</b><span>مستثمر مسجّل</span></div>
-        </div>
+      <div class="emp-aside reveal">
+        <div class="q">رُشد مش بيبيعلك حاجة. رُشد بيقف في صفك إنت — الطرف الوحيد اللي مصلحته إنك متخسرش.</div>
+        <div class="a">مفيش عمولة بناخدها منك، ومفيش وحدة بنقنعك بيها بالعافية. شغلتنا الوحيدة إننا نبصّ لصفقتك ونقولك <b>الحقيقة</b> قبل ما توقّع.</div>
       </div>
     </div>
   </section>
 
-  <section class="q-band">
-    <div class="wrap q-grid">
-      <div>
-        <div style="font-weight:700;font-size:13px;color:var(--ink-soft);letter-spacing:.5px;margin-bottom:10px">الأسئلة اللي بتدور في دماغك</div>
-        <h2 style="font-size:clamp(20px,3.5vw,28px);margin-bottom:6px">إحنا بنجاوب على كل حاجة بتخوّفك قبل ما تشتري.</h2>
-        <ul class="q-list">
-          <li><div class="qi">؟</div><div class="qt">"المطوّر ده هيسلّملي في معاد ولا هيأخّر سنين؟"</div></li>
-          <li><div class="qi">؟</div><div class="qt">"السعر ده مظبوط ولا بيضحكوا عليّا؟"</div></li>
-          <li><div class="qi">؟</div><div class="qt">"العائد اللي بيقولوه ده حقيقي ولا كلام بروشور؟"</div></li>
-          <li><div class="qi">؟</div><div class="qt">"في تقسيط مريح ولا لازم أدفع كاش؟"</div></li>
-          <li><div class="qi">؟</div><div class="qt">"مين المطوّر ده وإيه مشاريعه الشغّالة فعلاً؟"</div></li>
-        </ul>
+  <section class="band" id="protections">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="seclabel"><span class="ln"></span><span class="tx">إزاي بنحمي فلوسك</span></div>
+        <h2>بنكشف التلات حاجات اللي بتخسّر الناس فلوسها — قبل ما توقّع.</h2>
+        <p class="sub">مش بنوعدك بمكسب. بنطمّنك إنك مش داخل في فخ.</p>
       </div>
-      <div class="q-ans">
-        <h3>رُشد بيوقف في صفّك — مش في صف البائع.</h3>
-        <p>كل المنصات التانية بياخدوا عمولة من المطوّر، فمصلحتهم إنك تشتري. <span class="lime">رُشد مصلحته الوحيدة إنك تاخد قرار صح.</span></p>
+      <div class="prot-grid">
+        <div class="prot reveal"><span class="pnum">١</span><div class="picon"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>المطوّر الخطر</h3><p>بنبصّ على سجل المطوّر: سلّم في معاده قبل كده ولا أخّر سنين؟ ده الفرق بين إنك تستلم وحدتك، أو تستنى في المحكمة.</p></div>
+        <div class="prot reveal"><span class="pnum">٢</span><div class="picon"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>السعر المضروب</h3><p>بنقارن سعر الوحدة بأسعار المنطقة الحقيقية، فتعرف إنت بتدفع سعر عادل ولا بتدفع زيادة على حاجة متستهلش.</p></div>
+        <div class="prot reveal"><span class="pnum">٣</span><div class="picon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 14l2 2 4-4"/></svg></div><h3>فخاخ العقد</h3><p>بنكشف البنود اللي بتضرّك: غرامات عليك لو اتأخرت، وحماية صفر لو المطوّر اتأخر، ومصاريف مخبّية. قبل ما تمضي.</p></div>
       </div>
     </div>
   </section>
 
   <section class="promise">
     <div class="wrap">
-      <div style="font-weight:700;font-size:13px;letter-spacing:.5px;color:rgba(255,255,255,.5);margin-bottom:10px">وعدنا ليك</div>
-      <h2><span class="cross">مش بنخليك تكسب أكتر.</span><br><span class="yes">بنخليك متخسرش.</span></h2>
-      <p class="sub">لأن فلوسك تستاهل حد بيقولك الحقيقة، مش حد بيبيعلك.</p>
+      <div class="pl reveal">وعدنا ليك</div>
+      <h2 class="reveal"><span class="no">مش بنخليك تكسب أكتر.</span><br><span class="yes">بنخليك متخسرش.</span></h2>
+    </div>
+  </section>
+
+  <section class="lead-band">
+    <div class="wrap">
+      <div class="lead-card reveal"><div class="inner">
+        <span class="soon-badge">التسجيل قريباً</span>
+        <h2 class="display">سجّل دلوقتي، وكن أول من يجرّب</h2>
+        <p>إحنا بنجهّز الحسابات والفحص الكامل. سجّل بياناتك، وأول ما نفعّل، هتكون إنت في أول دفعة — من غير بيع ومن غير عمولة.</p>
+        <form class="lead-form signup" id="leadForm">
+          <input type="text" id="leadName" placeholder="اسمك" required aria-label="الاسم">
+          <input type="tel" id="leadPhone" placeholder="رقم موبايلك" inputmode="tel" aria-label="رقم الموبايل">
+          <input type="email" id="leadEmail" placeholder="إيميلك" required aria-label="الإيميل">
+          <button type="submit" class="btn btn-lime">سجّلني</button>
+        </form>
+        <div class="lead-ok" id="leadOk">تمام يا <span id="leadNameBack"></span>! سجّلناك، والتفعيل قريباً — هنطمّنك أول ما نفتح 🌿</div>
+        <p class="lead-fine">مش بنبيع بياناتك، ومش بنزحلقك إعلانات. وعد.</p>
+      </div></div>
     </div>
   </section>
 </section>
 
-<!-- DEVELOPERS -->
-<section class="view" id="view-developers">
-  <div class="phead"><div class="wrap">
-    <span class="ey">🛡️ الخطوة الأولى</span>
-    <h1>ابحث عن المطوّر وشوف سكوره ومشاريعه</h1>
-    <p>سكور محايد من ١٠٠ + مشاريعه الحالية بالأسعار والتقسيط + رقم التواصل لو احتجته.</p>
-  </div></div>
-  <div class="wrap">
-    <div class="toolbar">
-      <div class="sbox"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input id="devQ" type="text" placeholder="اكتب اسم المطوّر..."></div>
-      <select class="sort-sel" id="devSort"><option value="score">الأعلى سكور</option><option value="deliver">الأكتر تسليماً</option><option value="name">أبجدي</option></select>
-    </div>
-    <div class="dev-grid" id="devGrid"></div>
-    <p class="disc">⚠️ السكور استرشادي مبني على بيانات منشورة — مش حكم نهائي ولا نصيحة قانونية. راجع الأوراق مع مختص قبل أي دفع.</p>
-  </div>
-</section>
-
-<!-- ANALYZER -->
-<section class="view" id="view-analyzer">
-  <div class="phead"><div class="wrap">
-    <span class="ey">🔍 الخطوة التانية</span>
-    <h1>حلّل الصفقة اللي قدامك</h1>
-    <p>حط بيانات الوحدة واعرف العائد ودرجة المخاطرة قبل ما تدفع.</p>
-  </div></div>
-  <div class="wrap">
-    <div class="az-form" id="azForm">
-      <div class="az-leg">١ · هدفك</div>
-      <div class="field"><label>إيه اللي عايزه؟</label><div class="seg" id="aGoal"><button class="on" data-g="both">سكن + استثمار</button><button data-g="invest">استثمار بس</button><button data-g="live">سكن بس</button></div></div>
-      <div class="field" id="targetF"><label>العائد السنوي اللي يرضيك</label><div class="seg" id="aTarget"><button data-t="12">أحافظ (~١٢٪)</button><button class="on" data-t="18">أكسب كويس (~١٨٪)</button><button data-t="25">أكسب كتير (~٢٥٪+)</button></div></div>
-      <hr style="border:none;border-top:1px solid var(--line);margin:4px 0 18px">
-      <div class="az-leg">٢ · الوحدة</div>
-      <div class="g2">
-        <div class="field"><label>السوق</label><div class="seg" id="aCity"><button class="on" data-c="eg">مصر 🇪🇬</button><button data-c="dxb">دبي 🇦🇪</button></div></div>
-        <div class="field"><label>المنطقة</label><select class="inp" id="aArea"></select></div>
-      </div>
-      <div class="g2">
-        <div class="field"><label>سعر الوحدة <span class="hint" id="aCur">(جنيه)</span></label><input class="inp" id="aPrice" type="text" inputmode="numeric" value="3,000,000"></div>
-        <div class="field"><label>المساحة <span class="hint">(متر)</span></label><input class="inp" id="aSize" type="number" value="120"></div>
-      </div>
-      <div class="field"><label>الإيجار الشهري المتوقع <span class="hint">(اختياري)</span></label><input class="inp" id="aRent" type="text" inputmode="numeric" placeholder="سيبه فاضي لو مش متأكد"></div>
-      <hr style="border:none;border-top:1px solid var(--line);margin:4px 0 18px">
-      <div class="az-leg">٣ · تفاصيل</div>
-      <div class="g2">
-        <div class="field"><label>حالة الوحدة</label><div class="seg" id="aStatus"><button class="on" data-st="ready">جاهزة</button><button data-st="off">تحت الإنشاء</button></div></div>
-        <div class="field"><label>التشطيب</label><div class="seg" id="aFinish"><button class="on" data-f="full">كامل</button><button data-f="semi">نص تشطيب</button><button data-f="core">على المحارة</button></div></div>
-      </div>
-      <div class="field"><label>المطوّر</label><div class="seg" id="aDev"><button class="on" data-d="good">معروف وبيسلّم</button><button data-d="unknown">مش متأكد</button><button data-d="concern">سمعته فيها كلام</button></div></div>
-      <button class="az-run" id="azRun">حلّل الصفقة دي 🔍</button>
-    </div>
-    <div id="azReport">
-      <div class="verdict" id="vhero"><h2 id="vtitle"></h2><p id="vdesc"></p></div>
-      <div class="rings">
-        <div class="rcard"><div class="rt">💰 العائد مقابل هدفك</div><div class="rw"><svg width="92" height="92"><circle cx="46" cy="46" r="38" fill="none" stroke="#EFEAE2" stroke-width="9"/><circle id="rReturn" cx="46" cy="46" r="38" fill="none" stroke="#6A45C9" stroke-width="9" stroke-linecap="round" stroke-dasharray="239" stroke-dashoffset="239"/></svg><div class="rv" id="vReturn">—</div></div><div class="rl" id="lReturn"></div><div class="rd" id="dReturn"></div></div>
-        <div class="rcard"><div class="rt">🏠 تنفع سكن؟</div><div class="rw"><svg width="92" height="92"><circle cx="46" cy="46" r="38" fill="none" stroke="#EFEAE2" stroke-width="9"/><circle id="rLive" cx="46" cy="46" r="38" fill="none" stroke="#6A45C9" stroke-width="9" stroke-linecap="round" stroke-dasharray="239" stroke-dashoffset="239"/></svg><div class="rv" id="vLive">—</div></div><div class="rl" id="lLive"></div><div class="rd" id="dLive"></div></div>
-        <div class="rcard"><div class="rt">📈 تنفع استثمار؟</div><div class="rw"><svg width="92" height="92"><circle cx="46" cy="46" r="38" fill="none" stroke="#EFEAE2" stroke-width="9"/><circle id="rInv" cx="46" cy="46" r="38" fill="none" stroke="#6A45C9" stroke-width="9" stroke-linecap="round" stroke-dasharray="239" stroke-dashoffset="239"/></svg><div class="rv" id="vInv">—</div></div><div class="rl" id="lInv"></div><div class="rd" id="dInv"></div></div>
-      </div>
-      <div class="nums"><div class="nbox"><div class="nb" id="nYield">—</div><div class="nl">عائد إيجاري</div></div><div class="nbox"><div class="nb" id="nApprec">—</div><div class="nl">ارتفاع القيمة</div></div><div class="nbox"><div class="nb" id="nTotal">—</div><div class="nl">إجمالي سنوياً</div></div></div>
-      <div class="chklist"><h3>قبل ما تدفع</h3><div class="cs">النقط دي محتاجة انتباهك.</div><div id="aChecks"></div></div>
-      <p class="disc">⚠️ التحليل استرشادي — مش بديل عن المعاينة والمراجعة القانونية.</p>
-      <button class="redo-btn" id="azRedo">↻ حلّل صفقة تانية</button>
-    </div>
-  </div>
-</section>
-
-<!-- ADVISOR -->
+<!-- ============ ADVISOR ============ -->
 <section class="view" id="view-advisor">
   <div class="phead"><div class="wrap">
-    <span class="ey">🧭 الخطوة التالتة</span>
-    <h1>قوللي معاك كام وعايز إيه</h1>
-    <p>جاوب على سؤالين وهات اختيارك جاهز بالسبب والعائد.</p>
+    <span class="eyebrow">🧭 مستشارك الشخصي</span>
+    <h1>قوللي معاك كام وعايز إيه — وأنا أقولك تحط فين.</h1>
+    <p>مش هتدوّر ولا تقارن ولا تحتار. بس جاوب على سؤالين، وهات اختيارك جاهز بالسبب والمخاطر.</p>
   </div></div>
   <div class="wrap">
-    <div class="adv-card" id="advForm">
-      <div class="aqn"><span class="n">١</span>معاك كام للاستثمار؟</div>
-      <div class="amount-row"><span class="cur">ج.م</span><input id="budget" type="text" inputmode="numeric" value="5,000,000"></div>
-      <div class="aqn"><span class="n">٢</span>عايز إيه من فلوسك؟</div>
-      <div class="goals" id="goals">
-        <div class="goal on" data-g="income"><div class="gi">💵</div><div class="gt">دخل شهري</div><div class="gd">إيجار شهري</div></div>
-        <div class="goal" data-g="preserve"><div class="gi">🛡️</div><div class="gt">أحافظ عليها</div><div class="gd">أأمن خيار</div></div>
-        <div class="goal" data-g="grow"><div class="gi">📈</div><div class="gt">أكبّرها</div><div class="gd">أعلى نمو</div></div>
+    <div class="ask" id="ask">
+      <div class="grp">
+        <div class="q"><span class="n">١</span>معاك كام للاستثمار؟</div>
+        <div class="amount-wrap"><span class="cur">ج.م</span><input id="budget" type="text" inputmode="numeric" value="5,000,000"></div>
       </div>
-      <button class="adv-run" id="advRun">قوللي أحط فين 🧭</button>
+      <div class="grp">
+        <div class="q"><span class="n">٢</span>عايز إيه من فلوسك؟</div>
+        <div class="goals" id="goals">
+          <div class="goal on" data-g="income"><div class="gi">💵</div><div class="gt">دخل شهري</div><div class="gd">إيجار يجيلي كل شهر</div></div>
+          <div class="goal" data-g="preserve"><div class="gi">🛡️</div><div class="gt">أحافظ عليها</div><div class="gd">أأمن خيار ممكن</div></div>
+          <div class="goal" data-g="grow"><div class="gi">📈</div><div class="gt">أكبّرها</div><div class="gd">أعلى نمو متوقع</div></div>
+        </div>
+      </div>
+      <button class="go-btn" id="go">قوللي أحط فين 🧭</button>
     </div>
     <div id="advResult">
-      <div style="text-align:center;margin:6px 0 14px"><div style="font-weight:700;font-size:13px;color:var(--ink-soft)">أنسب اختيار لفلوسك دلوقتي:</div><h2 id="advTitle" style="font-size:clamp(19px,3.5vw,27px);margin-top:4px"></h2></div>
+      <div class="res-lead"><div class="rl">بناءً على مبلغك وهدفك، ده أنسب اختيار لفلوسك دلوقتي:</div><h2 id="resTitle"></h2></div>
       <div id="pickHolder"></div>
-      <div id="altsHolder" class="alts-list"></div>
-      <p class="disc">⚠️ ترشيح استرشادي — العوائد تقديرية. راجع مع مختص قبل أي دفع.</p>
-      <button class="adv-redo" id="advRedo">↻ غيّر إجاباتك</button>
+      <div class="alts" id="altsHolder"></div>
+      <div style="text-align:center"><button class="redo" id="advRedo">↻ غيّر إجاباتك</button></div>
+      <p class="disc">⚠️ ده ترشيح استرشادي مبني على بياناتك ومتوسطات تقديرية للفرص المتاحة — مش توصية استثمارية ولا نصيحة مالية أو قانونية، والقرار ومسؤوليته عليك. العوائد تقديرية ومش مضمونة. قبل أي دفع، عاين وراجع العقد مع مختص.</p>
     </div>
   </div>
 </section>
+
+<!-- ============ OPPORTUNITIES ============ -->
+<section class="view" id="view-opportunities">
+  <div class="phead"><div class="wrap">
+    <span class="eyebrow">🎯 فرص فلتّرناها لك</span>
+    <h1>صفقات محددة، مدروسة بالكامل — قدامك دلوقتي.</h1>
+    <p>إحنا اللي بنطلّع الصفقة ونحللها: المطوّر، إدارة المخاطر، والعائد المتوقع على فلوسك. إنت بس تقرّر.</p>
+  </div></div>
+  <div class="wrap">
+    <div class="neutral"><span class="ni">🧭</span><p>رُشد بيعرض الفرص دي بعد تحليل محايد، <b>وبيفلتر اللي مش بيحقق معايير الأمان والعائد</b>. إحنا بنحطّ الأرقام قدامك بصراحة — <b>القرار النهائي قرارك إنت</b>. مفيش عمولة بناخدها منك.</p></div>
+    <div class="filters" id="filters">
+      <button class="chip on" data-m="all">كل الأسواق</button>
+      <button class="chip" data-m="مصر">مصر 🇪🇬</button>
+      <button class="chip" data-m="دبي">دبي 🇦🇪</button>
+      <button class="chip" data-m="الرياض">الرياض 🇸🇦</button>
+    </div>
+    <div class="ogrid" id="oppGrid"></div>
+    <p class="disc">⚠️ الفرص المعروضة لأغراض العرض التوضيحي في النسخة دي. رُشد بيقدّم تحليل وبيانات استرشادية مش توصية استثمارية أو نصيحة مالية أو قانونية، والقرار ومسؤوليته على المستثمر. العوائد تقديرية ومش مضمونة. قبل أي دفع، عاين وراجع العقد مع مختص.</p>
+  </div>
+</section>
+
+<!-- ============ ANALYZER ============ -->
+<section class="view" id="view-analyzer">
+  <div class="phead"><div class="wrap">
+    <span class="eyebrow">🔍 قبل ما تدفع جنيه</span>
+    <h1>حط بيانات الوحدة اللي قدامك، واعرف تدفع وإنت مطمن ولا لأ.</h1>
+    <p>هنحلّلها على ٣ أسئلة: هتجيب عائدك؟ تنفع سكن؟ تنفع للاتنين؟ — ونطلعلك حُكم واضح.</p>
+  </div></div>
+  <div class="wrap">
+    <div class="form-card" id="formCard">
+      <div class="legend">١ · إنت عايز إيه؟</div>
+      <div class="field"><label>هدفك من الوحدة دي</label>
+        <div class="seg" id="aGoal"><button class="on" data-g="both">سكن + استثمار</button><button data-g="invest">استثمار بس</button><button data-g="live">سكن بس</button></div>
+      </div>
+      <div class="field" id="targetField"><label>العائد السنوي اللي يرضيك <span class="hint">(شامل الإيجار وارتفاع القيمة)</span></label>
+        <div class="seg" id="aTarget"><button data-t="12">أحافظ على فلوسي (~١٢٪)</button><button class="on" data-t="18">أكسب كويس (~١٨٪)</button><button data-t="25">أكسب كتير (~٢٥٪+)</button></div>
+      </div>
+      <div class="divider"></div>
+      <div class="legend">٢ · الوحدة نفسها</div>
+      <div class="grid2">
+        <div class="field"><label>السوق</label><div class="seg" id="aCity"><button class="on" data-c="eg">مصر 🇪🇬</button><button data-c="dxb">دبي 🇦🇪</button></div></div>
+        <div class="field"><label>المنطقة</label><select id="aArea"></select></div>
+      </div>
+      <div class="grid3">
+        <div class="field"><label>سعر الوحدة <span id="aCur" class="hint">(جنيه)</span></label><input class="input" id="aPrice" type="text" inputmode="numeric" value="3,000,000"></div>
+        <div class="field"><label>المساحة <span class="hint">(متر)</span></label><input class="input" id="aSize" type="number" value="120"></div>
+        <div class="field"><label>الإيجار الشهري المتوقع <span class="hint">(لو تعرفه)</span></label><input class="input" id="aRent" type="text" inputmode="numeric" placeholder="سيبه فاضي لو مش متأكد"></div>
+      </div>
+      <div class="divider"></div>
+      <div class="legend">٣ · تفاصيل بتفرق</div>
+      <div class="grid2">
+        <div class="field"><label>حالة الوحدة</label><div class="seg" id="aStatus"><button class="on" data-st="ready">جاهزة / مستلمة</button><button data-st="off">تحت الإنشاء</button></div></div>
+        <div class="field"><label>التشطيب</label><div class="seg" id="aFinish"><button class="on" data-f="full">كامل</button><button data-f="semi">نص تشطيب</button><button data-f="core">على المحارة</button></div></div>
+      </div>
+      <div class="field"><label>المطوّر / البائع</label>
+        <div class="seg" id="aDev"><button class="on" data-d="good">اسم معروف وبيسلّم في معاده</button><button data-d="unknown">مش متأكد منه</button><button data-d="concern">سمعته فيها كلام / اتأخر قبل كده</button></div>
+      </div>
+      <button class="analyze-btn" id="aRun">حلّل الوحدة دي 🔍</button>
+    </div>
+
+    <div id="anaReport">
+      <div class="verdict-hero" id="vhero"><div class="vtag" id="vtag">الحُكم</div><h2 id="vtitle"></h2><p id="vdesc"></p></div>
+      <div class="score-grid">
+        <div class="scard" id="cardReturn"><div class="stitle">💰 العائد مقابل هدفك</div><div class="ring"><svg width="104" height="104"><circle cx="52" cy="52" r="44" fill="none" stroke="#EFEAE2" stroke-width="11"/><circle id="ringReturn" cx="52" cy="52" r="44" fill="none" stroke="#6A45C9" stroke-width="11" stroke-linecap="round" stroke-dasharray="276" stroke-dashoffset="276"/></svg><div class="val" id="valReturn">—</div></div><div class="verdict-line" id="lineReturn"></div><div class="detail" id="detReturn"></div></div>
+        <div class="scard"><div class="stitle">🏠 تنفع سكن؟</div><div class="ring"><svg width="104" height="104"><circle cx="52" cy="52" r="44" fill="none" stroke="#EFEAE2" stroke-width="11"/><circle id="ringLive" cx="52" cy="52" r="44" fill="none" stroke="#6A45C9" stroke-width="11" stroke-linecap="round" stroke-dasharray="276" stroke-dashoffset="276"/></svg><div class="val" id="valLive">—</div></div><div class="verdict-line" id="lineLive"></div><div class="detail" id="detLive"></div></div>
+        <div class="scard"><div class="stitle">📈 تنفع استثمار؟</div><div class="ring"><svg width="104" height="104"><circle cx="52" cy="52" r="44" fill="none" stroke="#EFEAE2" stroke-width="11"/><circle id="ringInv" cx="52" cy="52" r="44" fill="none" stroke="#6A45C9" stroke-width="11" stroke-linecap="round" stroke-dasharray="276" stroke-dashoffset="276"/></svg><div class="val" id="valInv">—</div></div><div class="verdict-line" id="lineInv"></div><div class="detail" id="detInv"></div></div>
+      </div>
+      <div class="both-card"><div class="bicon">⚖️</div><div class="btext"><h3 id="bothTitle"></h3><p id="bothDesc"></p></div></div>
+      <div class="numbers">
+        <div class="nbox"><div class="nb" id="nYield">—</div><div class="nl">العائد الإيجاري السنوي</div></div>
+        <div class="nbox"><div class="nb" id="nApprec">—</div><div class="nl">ارتفاع القيمة المتوقع سنوياً</div></div>
+        <div class="nbox"><div class="nb" id="nTotal">—</div><div class="nl">إجمالي العائد المتوقع سنوياً</div></div>
+      </div>
+      <div class="checklist"><h3>قبل ما تدفع، اتأكد من ده</h3><div class="csub">دي النقط اللي محتاجة انتباهك في الوحدة دي بالذات.</div><div id="aChecks"></div></div>
+      <p class="disc">⚠️ التحليل ده مبني على اللي إنت دخّلته ومتوسطات تقديرية للمنطقة — هدفه يوجّهك ويوريك النقط المهمة، مش يحل محل المعاينة والمراجعة القانونية والمالية. مفيش عائد مضمون. قبل أي دفع، عاين الوحدة وراجع العقد مع مختص.</p>
+      <div style="text-align:center"><button class="redo" id="anaRedo">↻ حلّل وحدة تانية</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEVELOPERS ============ -->
+<section class="view" id="view-developers">
+  <div class="phead"><div class="wrap">
+    <span class="eyebrow">🛡️ الخطوة الأولى قبل ما تدفع</span>
+    <h1>دوّر على المطوّر اللي قدامك واعرف سكوره.</h1>
+    <p>كل مطوّر عنده <b>سكور من ١٠٠</b> مبني على بيانات رسمية — بيوريلك: هل بيسلّم في معاده؟ سلّم كام وحدة؟ وإيه اللي يميّزه أو يخوّف منه.</p>
+  </div></div>
+  <div class="wrap">
+    <div class="dev-howto">
+      <div class="dh"><span class="dhn">١</span> اكتب اسم المطوّر في البحث</div>
+      <div class="dh"><span class="dhn">٢</span> شوف سكوره وسجل تسليمه</div>
+      <div class="dh"><span class="dhn">٣</span> اضغط «افتح صفحته» لتفاصيل أكتر</div>
+    </div>
+      <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input id="devQ" type="text" placeholder="دوّر على مطوّر..."></div>
+    </div>
+    <div class="toolbar">
+      <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input id="devQ" type="text" placeholder="دوّر على مطوّر..."></div>
+      <select class="sort" id="devSort"><option value="score">الأعلى سكور</option><option value="deliver">الأكتر تسليماً</option><option value="name">أبجدي</option></select>
+    </div>
+    <div id="devList"></div>
+    <div class="method">
+      <h3>إزاي بنحسب السكور؟</h3>
+      <p>السكور مبني على ٤ أعمدة من بيانات عامة وموثّقة، مش آراء. كل رقم وراه مصدر منشور تقدر تراجعه بنفسك.</p>
+      <div class="mpills"><span class="mpill">التسجيل الرسمي · ٢٥٪</span><span class="mpill">سجل التسليم الفعلي · ٣٥٪</span><span class="mpill">الخبرة وحجم السوق · ٢٥٪</span><span class="mpill">الاستقرار والسمعة · ١٥٪</span></div>
+      <p style="margin-top:14px">ملاحظة: السكورات هنا عالية لأن دي أكبر وأقدم المطوّرين وسجلهم في التسليم قوي فعلاً. الفرق الحقيقي هيبان لما نضيف المطوّرين الأصغر والأقل شفافية. وأي مطوّر يقدر يطلب مراجعة بياناته لو عنده مستند.</p>
+    </div>
+    <p class="disc">⚠️ السكور أداة استرشادية مبنية على بيانات منشورة وقت إعدادها، وممكن تتغيّر. مش حكم نهائي ولا نصيحة استثمارية أو قانونية، ومش بديل عن مراجعة الأوراق والعقد مع مختص قبل أي دفع. الأرقام المالية تقريبية من تقارير السوق.</p>
+  </div>
+</section>
+
 </main>
 
 <footer><div class="wrap foot">
-  <div class="foot-logo" data-view="home">
-    <svg width="20" height="22" viewBox="0 0 24 26" fill="none"><path d="M12 1l10 4v8c0 6.5-4.3 10.5-10 12C6.3 23.5 2 19.5 2 13V5z" fill="#241241"/><path d="M8 13l3 3 5-6" stroke="#AEDD1C" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>رُشد
-  </div>
-  <p>رُشد منصة استرشادية للمستثمر العقاري. كل التحليلات لأغراض التوجيه فقط ومش نصيحة مالية أو قانونية.</p>
+  <div class="logo" data-view="home"><svg class="shield" viewBox="0 0 24 26" fill="none" style="width:21px;height:23px"><path d="M12 1l10 4v8c0 6.5-4.3 10.5-10 12C6.3 23.5 2 19.5 2 13V5l10-4z" fill="#241241"/><path d="M8 13l3 3 5-6" stroke="#AEDD1C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>رُشد</div>
+  <p>رُشد أداة تعليمية بتساعدك تطمن على قرارك قبل ما تستثمر في عقار. كل التقديرات هنا للتوجيه ومش نصيحة استثمارية أو قانونية. قبل أي دفع فعلي، عاين وراجع العقد مع مختص.</p>
 </div></footer>
-
-<!-- WA -->
-<div class="wa-w"><div class="wa-panel" id="waP"><div class="wa-head"><div class="wa-ava">🛡️</div><div class="wa-meta"><div class="wn">رُشد</div><div class="ws2"><span class="dot"></span>بنرد خلال دقايق</div></div><button class="wa-x" id="waX">&times;</button></div><div class="wa-body"><div class="wa-bub">أهلاً 👋 اسأل عن أي مطوّر أو صفقة وهنطمّنك.</div><div class="wa-chips"><button class="wa-chip">طمّنّي على صفقة</button><button class="wa-chip">سكور مطوّر</button><button class="wa-chip">إزاي رُشد بيشتغل؟</button></div></div><div class="wa-ir"><input id="waT" type="text" placeholder="اكتب رسالتك..."><button id="waS">&#10148;</button></div></div><div class="wa-tip" id="waTip">محتاج مساعدة؟ 👋<button class="wa-tx" id="waTx">&times;</button></div><button class="wa-fab" id="waFab"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.25-.1-.45-.15-.65.15-.2.3-.75.95-.9 1.1-.15.2-.35.2-.65.05-.3-.15-1.25-.45-2.4-1.45-.9-.8-1.5-1.75-1.65-2.05-.15-.3 0-.45.15-.6.15-.15.3-.35.45-.55.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.15-.25-.55-.5-.5-.65-.5h-.55c-.2 0-.5.05-.75.35-.25.3-1 .95-1 2.35s1.05 2.7 1.2 2.9c.15.2 2.05 3.15 5 4.4.7.3 1.25.5 1.65.65.7.2 1.35.2 1.85.1.55-.1 1.7-.7 1.95-1.35.25-.65.25-1.2.15-1.35-.05-.1-.25-.15-.55-.3z"/><path d="M12 2A10 10 0 0 0 3.5 17.3L2 22l4.8-1.45A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.85.85.85-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></button></div>
 
 <script>
 (function(){
-"use strict";
-var WA="201111066828";
-var ADMIN_HASH="b17e1e0450dac425ea318253f6f852972d69731d6c7499c001468b695b6da219";
-var arD=['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
-function toAr(s){return String(s).replace(/[0-9]/g,function(d){return arD[+d];});}
-function parseNum(s){return parseFloat(String(s).replace(/[^0-9.]/g,''))||0;}
-function $(id){return document.getElementById(id);}
-function sv(id){var e=document.querySelector('#'+id+' .on');return e?e.dataset:{};}
-function getLeads(){try{return JSON.parse(localStorage.getItem('rushd_leads'))||[];}catch(e){return[];}}
-function saveLeads(a){localStorage.setItem('rushd_leads',JSON.stringify(a));}
-function getDevs(){try{return JSON.parse(localStorage.getItem('rushd_devs'))||[];}catch(e){return[];}}
-function getOpps(){try{return JSON.parse(localStorage.getItem('rushd_opps'))||[];}catch(e){return[];}}
-function getProfile(){try{return JSON.parse(localStorage.getItem('rushd_profile'))||{};}catch(e){return{};}}
+  "use strict";
+  var arD=['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+  function toAr(s){return String(s).replace(/[0-9]/g,function(d){return arD[+d];});}
+  function fmt(n){return toAr(Math.round(n).toLocaleString('en-US'));}
+  function parseNum(s){return parseFloat(String(s).replace(/[^0-9.]/g,''))||0;}
+  function seg(id){var e=document.querySelector('#'+id+' .on');return e?e.dataset:{};}
+  function $(id){return document.getElementById(id);}
 
-/* ── REGISTRATION WALL ── */
-var user=null;
-var saved=localStorage.getItem('rushd_user');
-if(saved){try{user=JSON.parse(saved);}catch(e){}}
-function openWall(){$('wall').classList.remove('off');}
-function closeWall(){$('wall').classList.add('off');if(user){$('navUser').style.display='flex';$('navName').textContent=user.name.split(' ')[0];}}
-if(user){closeWall();}
-$('wSubmit').addEventListener('click',function(){
-  var n=$('wName').value.trim(),p=$('wPhone').value.trim();
-  if(!n){$('wName').focus();return;}if(!p||p.length<10){$('wPhone').focus();return;}
-  user={name:n,phone:p,ts:Date.now()};
-  localStorage.setItem('rushd_user',JSON.stringify(user));
-  var leads=getLeads();leads.push(user);saveLeads(leads);
-  $('wOkName').textContent=n.split(' ')[0];$('wOk').style.display='block';
-  document.querySelector('.wall-form').style.display='none';
-  setTimeout(closeWall,1800);
-});
-$('navOut').addEventListener('click',function(){localStorage.removeItem('rushd_user');user=null;location.reload();});
-
-/* ── ROUTER ── */
-function showView(v){
-  document.querySelectorAll('.view').forEach(function(x){x.classList.remove('active');});
-  ($('view-'+v)||$('view-home')).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(function(a){a.classList.toggle('on',a.dataset.view===v);});
-  window.scrollTo(0,0);$('mobMenu').style.display='none';
-  if(!user&&v!=='home'){openWall();return;}
-}
-document.addEventListener('click',function(e){
-  var t=e.target.closest('[data-view]');
-  if(t&&!t.matches('.nav-links')&&!t.matches('.mob-menu')){showView(t.dataset.view);}
-});
-var h=(location.hash||'').replace('#','');
-showView(h||'home');
-$('burger').addEventListener('click',function(){var m=$('mobMenu');m.style.display=m.style.display==='flex'?'none':'flex';});
-$('mobMenu').style.cssText='flex-direction:column;gap:2px;padding:10px;background:var(--card);border-bottom:1px solid var(--line)';
-$('mobMenu').style.display='none';
-
-/* ── WHO PHOTOS ── */
-function loadWhoPhotos(){
-  var p=getProfile();
-  if(p.photos&&p.photos.length){
-    var h=p.photos.map(function(src){return '<img src="'+src+'" alt="رُشد" style="border-radius:14px;object-fit:cover;height:150px;width:100%;box-shadow:var(--sh)">';}).join('');
-    $('whoPhotos').innerHTML=h;
+  /* ---------- view router ---------- */
+  var menu=$('menu');
+  function closeMenu(){menu.classList.remove('open');}
+  function showView(name){
+    var el=$('view-'+name);
+    if(!el){name='home';el=$('view-home');}
+    document.querySelectorAll('.view').forEach(function(v){v.classList.remove('active');});
+    el.classList.add('active');
+    document.querySelectorAll('#menu a[data-view]').forEach(function(a){a.classList.toggle('active',a.dataset.view===name);});
+    el.querySelectorAll('.reveal').forEach(function(r){r.classList.add('in');});
+    try{history.replaceState(null,'','#'+name);}catch(e){location.hash=name;}
+    window.scrollTo(0,0);
+    closeMenu();
   }
-  if(p.desc)$('whoDesc').textContent=p.desc;
-  if(p.stats){
-    if(p.stats.devs)$('statDevs').textContent=p.stats.devs;
-    if(p.stats.opps)$('statOpp').textContent=p.stats.opps;
-    if(p.stats.users){var leads=getLeads();$('statUsers').textContent=toAr(leads.length||0)+'+';}
-  }
-}
-loadWhoPhotos();
-
-/* ── DEVELOPERS ── */
-var BUILT_IN=[
-  {k:"tmg",n:"طلعت مصطفى (TMG)",ab:"TM",c:"#6A45C9",est:"١٩٧٤",reg:25,del:34,exp:25,stab:14,deliver:3196,sales:"٢١١ مليار",note:"",phone:"",analysis:"",logo:"",
-   projs:[{name:"مدينتي",loc:"القاهرة الجديدة",price:"من ٢٫٥ مليون ج",install:"تقسيط ١٠ سنين",img:"",status:"g"},{name:"نور",loc:"العاصمة الإدارية",price:"من ٤ مليون ج",install:"تقسيط ٨ سنين",img:"",status:"g"},{name:"الرحاب",loc:"القاهرة الجديدة",price:"من ١٫٨ مليون ج",install:"جاهز للتسليم",img:"",status:"g"}]},
-  {k:"lavista",n:"لافيستا",ab:"LV",c:"#51730A",est:"٢٠٠٢",reg:25,del:32,exp:22,stab:14,deliver:2179,sales:"٣٢ مليار",note:"معروفة بالالتزام بمواعيد التسليم.",phone:"",analysis:"",logo:"",
-   projs:[{name:"لافيستا باي",loc:"الساحل الشمالي",price:"من ٣ مليون ج",install:"تقسيط ٧ سنين",img:"",status:"g"},{name:"سولانا",loc:"العين السخنة",price:"من ٢٫٢ مليون ج",install:"تقسيط ٦ سنين",img:"",status:"g"}]},
-  {k:"palmhills",n:"بالم هيلز",ab:"PH",c:"#DD8E2A",est:"١٩٩٧",reg:25,del:31,exp:23,stab:13,deliver:2600,sales:"١٤٣ مليار",note:"",phone:"",analysis:"",logo:"",
-   projs:[{name:"Palm Hills October",loc:"أكتوبر",price:"من ٣٫٥ مليون ج",install:"تقسيط ٨ سنين",img:"",status:"g"},{name:"Palm Hills New Cairo",loc:"القاهرة الجديدة",price:"من ٤ مليون ج",install:"تقسيط ٧ سنين",img:"",status:"g"}]},
-  {k:"emaar",n:"إعمار مصر",ab:"EM",c:"#553098",est:"١٩٩٧",reg:25,del:28,exp:24,stab:14,deliver:1112,sales:"٧٨ مليار",note:"معايير بناء عالمية.",phone:"",analysis:"",logo:"",
-   projs:[{name:"ميفيدا",loc:"القاهرة الجديدة",price:"من ٦ مليون ج",install:"تقسيط ٦ سنين",img:"",status:"g"}]},
-  {k:"sodic",n:"سوديك",ab:"SD",c:"#2A8C7A",est:"١٩٩٦",reg:25,del:30,exp:23,stab:13,deliver:2083,sales:"٤٨ مليار",note:"",phone:"",analysis:"",logo:"",
-   projs:[{name:"Eastown",loc:"القاهرة الجديدة",price:"من ٤٫٥ مليون ج",install:"تقسيط ٧ سنين",img:"",status:"g"}]},
-  {k:"mountainview",n:"ماونتن فيو",ab:"MV",c:"#C0492E",est:"٢٠٠٥",reg:25,del:30,exp:22,stab:13,deliver:2208,sales:"٦٥٫٧ مليار",note:"",phone:"",analysis:"",logo:"",
-   projs:[{name:"iCity",loc:"القاهرة الجديدة",price:"من ٤ مليون ج",install:"تقسيط ٧ سنين",img:"",status:"g"}]},
-  {k:"madinetmasr",n:"مدينة مصر",ab:"MM",c:"#9A5BC4",est:"١٩٥٩",reg:25,del:27,exp:22,stab:12,deliver:1300,sales:"٥٢ مليار",note:"⚑ تقارير ٢٠٢٥ أشارت لارتفاع في إلغاء التعاقدات.",phone:"",analysis:"",logo:"",
-   projs:[{name:"تاج سيتي",loc:"القاهرة الجديدة",price:"من ٢٫٨ مليون ج",install:"تقسيط ٦ سنين",img:"",status:"y"}]}
-];
-function allDevs(){
-  var custom=getDevs();
-  var merged=BUILT_IN.map(function(b){var ov=custom.find(function(c){return c.k===b.k;});return ov?Object.assign({},b,ov):b;});
-  var newOnes=custom.filter(function(c){return !BUILT_IN.find(function(b){return b.k===c.k;});});
-  return merged.concat(newOnes);
-}
-function tier(s){return s>=90?["ممتاز","#51730A"]:s>=82?["قوي","#6A45C9"]:s>=70?["جيد","#DD8E2A"]:["خد بالك","#DD4F36"];}
-function P(l,v,m){return '<div class="pillar"><div class="plt"><span>'+l+'</span><span class="pv">'+toAr(v)+'/'+toAr(m)+'</span></div><div class="bar"><i data-w="'+(v/m*100)+'"></i></div></div>';}
-function renderDevs(){
-  var q=$('devQ').value.trim(),sort=$('devSort').value;
-  var arr=allDevs();
-  arr.forEach(function(d){d.score=(d.reg||0)+(d.del||0)+(d.exp||0)+(d.stab||0);});
-  if(q)arr=arr.filter(function(d){return d.n.indexOf(q)>-1;});
-  arr.sort(function(a,b){return sort==='name'?a.n.localeCompare(b.n,'ar'):sort==='deliver'?b.deliver-a.deliver:b.score-a.score;});
-  var G=$('devGrid');G.innerHTML='';
-  arr.forEach(function(d){
-    var t=tier(d.score);
-    var logoHtml=d.logo?'<img src="'+d.logo+'" alt="'+d.n+'">':(d.ab||'?');
-    var projs=(d.projs||[]).map(function(p){
-      var sc=p.status==='g'?'var(--lime)':p.status==='y'?'var(--amber)':'var(--coral)';
-      return '<div class="pj"><div class="pj-img" style="'+(p.img?'background-image:url('+p.img+') center/cover':'background:#e9e3d8')+'"><span class="pbadge" style="background:'+sc+'">'+p.name+'</span></div><div class="pj-info"><div class="pj-loc">📍 '+p.loc+'</div><div class="pj-price">'+p.price+'</div>'+(p.install?'<div class="pj-install">🗓️ '+p.install+'</div>':'')+'</div></div>';
-    }).join('');
-    var el=document.createElement('div');el.className='dc';
-    el.innerHTML=
-      '<div class="dc-head">'+
-        '<div class="dc-logo" style="background:'+d.c+'">'+logoHtml+'</div>'+
-        '<div class="dc-info"><div class="dc-name">'+d.n+'</div><div class="dc-meta">في السوق منذ '+(d.est||'—')+' · '+(d.deliver?toAr(d.deliver.toLocaleString('en-US')):'—')+' وحدة ٢٠٢٥</div></div>'+
-        '<div class="dc-score"><div class="sn2" style="color:'+t[1]+'">'+toAr(d.score)+'</div><div class="st2" style="color:'+t[1]+';background:'+t[1]+'22">'+t[0]+'</div></div>'+
-        '<svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>'+
-      '</div>'+
-      '<div class="dc-body"><div class="dc-inner">'+
-        '<div class="pillars">'+P('التسجيل الرسمي',d.reg||0,25)+P('سجل التسليم',d.del||0,35)+P('الخبرة',d.exp||0,25)+P('الاستقرار',d.stab||0,15)+'</div>'+
-        '<div class="dc-facts">'+
-          '<div class="df"><b>'+toAr(d.score)+'</b><span>سكور /١٠٠</span></div>'+
-          '<div class="df"><b>'+(d.deliver?toAr(d.deliver.toLocaleString('en-US')):'—')+'</b><span>وحدة سُلّمت</span></div>'+
-          '<div class="df"><b>'+(d.sales||'—')+'</b><span>مبيعات ٢٠٢٥</span></div>'+
-        '</div>'+
-        (d.note?'<div class="dc-note">'+d.note+'</div>':'')+
-        (d.analysis?'<div style="margin-top:12px;background:var(--plum-soft);border-radius:12px;padding:12px 14px;font-size:13.5px;font-weight:500;color:var(--ink)"><b style=\"font-size:13px;color:var(--plum-ink)\">🧭 تحليل رُشد</b><br>'+d.analysis+'</div>':'')+
-        (projs?'<div class="projs-title">🏗️ المشاريع الحالية وأسعارها وتقسيطها</div><div class="proj-grid">'+projs+'</div>':'')+
-        (d.phone?'<div class="dc-contact"><span class="ct">📞 عايز تتواصل معهم مباشرة؟</span><button class="reveal-num" id="rev-'+d.k+'">اظهر رقم التواصل</button></div>':'')+
-        '<div class="dc-share"><button class="swa" onclick="window.open(\'https://wa.me/'+WA+'?text=\'+encodeURIComponent(\'استفسر عن '+d.n+'\'),\'_blank\')">استفسر على واتساب</button><button class="scopy" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href+\'#developers\').then(function(){alert(\'اتنسخ ✓\');})">شارك الصفحة</button></div>'+
-      '</div></div>';
-    el.querySelector('.dc-head').addEventListener('click',function(){
-      var was=el.classList.contains('open');
-      document.querySelectorAll('.dc.open').forEach(function(x){x.classList.remove('open');});
-      if(!was){el.classList.add('open');setTimeout(function(){el.querySelectorAll('.bar i').forEach(function(b){b.style.width=b.dataset.w+'%';});},80);}
-    });
-    if(d.phone){
-      var rb=el.querySelector('#rev-'+d.k);
-      if(rb){var ph=d.phone;rb.addEventListener('click',function(){rb.outerHTML='<a class="num-shown" href="tel:'+ph.replace(/\s/g,'')+'">📞 '+ph+'</a>';});}
-    }
-    G.appendChild(el);
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-view]');
+    if(t){e.preventDefault();showView(t.dataset.view);}
   });
-}
-$('devQ').addEventListener('input',renderDevs);$('devSort').addEventListener('change',renderDevs);
-renderDevs();
+  $('burger').addEventListener('click',function(){menu.classList.toggle('open');});
 
-/* ── ANALYZER ── */
-var AREAS={
-  eg:{'القاهرة الجديدة':{y:6.5,a:13,live:86,dem:88},'الشيخ زايد':{y:6,a:11,live:84,dem:85},'أكتوبر':{y:6,a:10,live:80,dem:82},'مدينة نصر':{y:7,a:9,live:78,dem:82},'العاصمة الإدارية':{y:7,a:15,live:68,dem:74},'الساحل الشمالي':{y:5,a:14,live:58,dem:72},'الإسكندرية':{y:6.5,a:10,live:80,dem:80},'أخرى':{y:6,a:10,live:70,dem:70}},
-  dxb:{'وسط دبي':{y:6.5,a:8,live:90,dem:90},'دبي مارينا':{y:7,a:7,live:87,dem:88},'Business Bay':{y:7.5,a:8,live:80,dem:85},'JVC':{y:8,a:7,live:74,dem:83},'أخرى':{y:7,a:7,live:76,dem:78}}
-};
-document.querySelectorAll('.seg').forEach(function(s){s.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){s.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');if(s.id==='aGoal')$('targetF').style.display=(b.dataset.g==='live')?'none':'block';});});});
-function loadAreas(){var c=sv('aCity').c||'eg';var sel=$('aArea');sel.innerHTML='';Object.keys(AREAS[c]).forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k;sel.appendChild(o);});$('aCur').textContent=c==='eg'?'(جنيه)':'(درهم)';}
-document.querySelectorAll('#aCity button').forEach(function(b){b.addEventListener('click',loadAreas);});loadAreas();
-['aPrice','aRent'].forEach(function(id){$(id).addEventListener('input',function(){var r=parseNum(this.value);this.value=r?r.toLocaleString('en-US'):'';});});
-function cf(v){return v>=70?'#5C7A00':v>=50?'#E0952F':'#DD4F36';}
-function rs(id,val,col){var c=$(id);var off=239-(239*Math.max(0,Math.min(100,val))/100);c.style.transition='stroke-dashoffset 1s cubic-bezier(.3,1,.4,1)';c.setAttribute('stroke',col);setTimeout(function(){c.style.strokeDashoffset=off;},80);}
-$('azRun').addEventListener('click',function(){
-  var c=sv('aCity').c||'eg',g=sv('aGoal').g||'both',ar=$('aArea').value,bm=AREAS[c][ar];
-  var price=parseNum($('aPrice').value),rentM=parseNum($('aRent').value);
-  var st=sv('aStatus').st||'ready',fin=sv('aFinish').f||'full',dv=sv('aDev').d||'good';
-  var target=g==='live'?0:+(sv('aTarget').t||18);
-  if(!price){alert('اكتب سعر الوحدة الأول.');return;}
-  var yA=(rentM>0&&price>0)?(rentM*12/price*100):bm.y;
-  var ap=bm.a;if(dv==='concern')ap-=3;if(st==='off')ap+=1;
-  var nr=Math.max(0,yA+ap-1.5);
-  var lv=bm.live+(fin==='full'?6:fin==='semi'?0:-9)+(st==='ready'?6:-12)+(dv==='good'?5:dv==='unknown'?-3:-12);lv=Math.max(5,Math.min(100,lv));
-  var iv=Math.min(yA,10)/10*34+Math.min(ap,16)/16*30+bm.dem/100*18+(dv==='good'?14:dv==='unknown'?6:-2)-(st==='off'?8:0);iv=Math.max(5,Math.min(100,iv));
-  var rs2=g!=='live'?Math.max(5,Math.min(100,(nr/target)*72)):null;
-  $('nYield').textContent=toAr(yA.toFixed(1))+'٪';$('nApprec').textContent=toAr(Math.round(ap))+'٪';$('nTotal').textContent='~'+toAr(Math.round(nr))+'٪';
-  if(rs2===null){$('rReturn').closest('.rcard').style.opacity=.45;$('vReturn').textContent='—';$('lReturn').textContent='مش هدفك';}
-  else{rs('rReturn',rs2,cf(rs2));$('vReturn').textContent=toAr(Math.round(rs2));$('lReturn').textContent=nr>=target?'بيحقق هدفك ✓':nr>=target*.8?'قريب من هدفك':'أقل من هدفك';$('lReturn').style.color=cf(rs2);}
-  rs('rLive',lv,cf(lv));$('vLive').textContent=toAr(Math.round(lv));$('lLive').textContent=lv>=70?'سكن مريح ✓':lv>=50?'سكن مقبول':'مش مثالية';$('lLive').style.color=cf(lv);
-  rs('rInv',iv,cf(iv));$('vInv').textContent=toAr(Math.round(iv));$('lInv').textContent=iv>=70?'استثمار قوي ✓':iv>=50?'استثمار مقبول':'استثمار ضعيف';$('lInv').style.color=cf(iv);
-  $('dReturn').textContent='متوقع ~'+toAr(Math.round(nr))+'٪ سنوياً.';$('dLive').textContent=st==='off'?'تحت الإنشاء.':fin==='core'?'محتاجة تشطيب.':'مناسبة.';$('dInv').textContent='إيجاري '+toAr(yA.toFixed(1))+'٪ + ارتفاع '+toAr(Math.round(ap))+'٪.';
-  var hard=(dv==='concern')||(g!=='live'&&iv<40)||(g==='live'&&lv<42);
-  var good=!hard&&(g==='live'?lv>=68:g==='invest'?iv>=68&&nr>=target*.95:lv>=62&&iv>=60&&nr>=target*.9);
-  var vh=$('vhero');
-  if(hard){vh.className='verdict v-stop';$('vtitle').textContent='ابعد — متدفعش';$('vdesc').textContent='فيه علامة خطر. دوّر على أوضح.';}
-  else if(good){vh.className='verdict v-go';$('vtitle').textContent='تقدر تدفع وإنت مطمن ✓';$('vdesc').textContent='الوحدة بتخدم هدفك ومفيش خطر واضح.';}
-  else{vh.className='verdict v-care';$('vtitle').textContent='خد بالك واتأكد الأول';$('vdesc').textContent='فيها كويس وفيها ناقص. خلّص النقط تحت.';}
-  var items=[];
-  if(dv==='concern')items.push(['bad','✕','المطوّر علامة خطر','راجع سجل تسليمه كويس قبل ما تدفع.']);
-  if(dv==='unknown')items.push(['warn','!','اتأكد من المطوّر','دوّر على مشاريعه القديمة.']);
-  if(st==='off')items.push(['warn','!','تحت الإنشاء','اتأكد إن العقد يحميك لو اتأخر.']);
-  if(rentM>0&&yA<bm.y-1.5)items.push(['warn','!','السعر مرتفع','عائد أقل من متوسط المنطقة.']);
-  if(!rentM)items.push(['warn','!','مفيش رقم إيجار','حسبنا بمتوسط المنطقة.']);
-  if(fin==='core')items.push(['warn','!','محتاجة تشطيب','حسب التكلفة على السعر.']);
-  items.push(['ok','✓','اتأكد من تسجيلها','اطلب الأوراق الأصلية.'],['ok','✓','عاين بنفسك','متدفعش تحت ضغط.']);
-  var ck=$('aChecks');ck.innerHTML='';
-  items.forEach(function(it){var d=document.createElement('div');d.className='ci '+it[0];d.innerHTML='<div class="cic">'+it[1]+'</div><div><div class="ct">'+it[2]+'</div><div class="cd">'+it[3]+'</div></div>';ck.appendChild(d);});
-  $('azForm').style.display='none';$('azReport').classList.add('show');window.scrollTo(0,0);
-});
-$('azRedo').addEventListener('click',function(){$('azReport').classList.remove('show');$('azForm').style.display='block';window.scrollTo(0,0);});
+  /* ---------- HOME: safety meter + lead ---------- */
+  var togs=document.querySelectorAll('#togs .tog');
+  function meterUpdate(){
+    var score=50,anyRed=false,touched=false;
+    togs.forEach(function(t){
+      if(t.classList.contains('on-g')||t.classList.contains('on-r')){touched=true;var w=+t.dataset.w;if(t.dataset.type==='g')score+=w;else{score-=w;anyRed=true;}}
+    });
+    score=Math.max(0,Math.min(100,score));
+    $('mVal').innerHTML=toAr(Math.round(score))+'<small>٪</small>';
+    $('mMark').style.right=score+'%';
+    var col,txt;
+    if(!touched){col='var(--ink-soft)';txt='علّم على اللي ينطبق على صفقتك ↓';}
+    else if(anyRed||score<45){col='var(--coral)';txt='⚠️ خطر على فلوسك — متوقّعش قبل ما تتأكد';}
+    else if(score<70){col='var(--amber)';txt='خد بالك — فيه حاجة لسه محتاجة تأكيد';}
+    else{col='var(--lime-deep)';txt='✓ فلوسك في وضع آمن — كمّل خطوات التأكد';}
+    $('mVal').style.color=touched?col:'var(--plum-ink)';
+    var v=$('mVerd');v.style.color=col;v.textContent=txt;
+  }
+  togs.forEach(function(t){
+    t.setAttribute('tabindex','0');t.setAttribute('role','button');
+    function flip(){t.classList.toggle(t.dataset.type==='g'?'on-g':'on-r');meterUpdate();}
+    t.addEventListener('click',flip);
+    t.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();flip();}});
+  });
+  meterUpdate();
+  $('leadForm').addEventListener('submit',function(e){e.preventDefault();var nm=$('leadName'),em=$('leadEmail');if(nm.value.trim()&&em.value.indexOf('@')>0){$('leadNameBack').textContent=nm.value.trim().split(' ')[0];$('leadOk').classList.add('show');nm.value='';em.value='';if($('leadPhone'))$('leadPhone').value='';}else{ (nm.value.trim()?em:nm).focus(); }});
 
-/* ── ADVISOR ── */
-var SHELF=[
-  {loc:"التجمع الخامس",title:"شقة ١٤٠م استلام فوري",dev:"طلعت مصطفى",sc:95,c:"#6A45C9",ab:"TM",priceEGP:6200000,price:"٦٫٢ مليون ج",rent:8,total:20,risk:22,goal:"income",why:"سجل تسليم ممتاز وإيجار عالي."},
-  {loc:"الشيخ زايد",title:"شقة جاهزة راقية",dev:"سوديك",sc:91,c:"#2A8C7A",ab:"SD",priceEGP:4500000,price:"٤٫٥ مليون ج",rent:7,total:17,risk:26,goal:"preserve",why:"حفاظ ممتاز على القيمة."},
-  {loc:"مدينة نصر",title:"شقة بعائد إيجاري عالي",dev:"مطوّر معتمد",sc:80,c:"#9A5BC4",ab:"معتمد",priceEGP:2800000,price:"٢٫٨ مليون ج",rent:9,total:16,risk:30,goal:"income",why:"أعلى دخل شهري."},
-  {loc:"أكتوبر",title:"شقة عائلية بمجتمع متكامل",dev:"بالم هيلز",sc:92,c:"#DD8E2A",ab:"PH",priceEGP:3900000,price:"٣٫٩ مليون ج",rent:6,total:15,risk:28,goal:"preserve",why:"مجتمع مطلوب وسجل تسليم قوي."},
-  {loc:"الساحل الشمالي",title:"شاليه استثمار موسمي",dev:"لافيستا",sc:93,c:"#51730A",ab:"LV",priceEGP:4800000,price:"٤٫٨ مليون ج",rent:5,total:19,risk:38,goal:"grow",why:"ارتفاع قيمة عالي."},
-  {loc:"العاصمة الإدارية",title:"شقة سعر مبكر",dev:"طلعت مصطفى",sc:95,c:"#6A45C9",ab:"TM",priceEGP:3500000,price:"٣٫٥ مليون ج",rent:6,total:22,risk:34,goal:"grow",why:"أعلى نمو مع مطوّر ممتاز."}
-];
-function mSc(o,b,g){if(o.priceEGP>b)return -1;return(o.goal===g?40:0)+(g==='income'?o.rent*3.2:g==='grow'?o.total*1.4:(100-o.risk)*.42)+o.sc*.3+(100-o.risk)*.18;}
-$('budget').addEventListener('input',function(){var r=parseNum(this.value);this.value=r?r.toLocaleString('en-US'):'';});
-document.querySelectorAll('#goals .goal').forEach(function(g){g.addEventListener('click',function(){document.querySelectorAll('#goals .goal').forEach(function(x){x.classList.remove('on');});g.classList.add('on');});});
-$('advRun').addEventListener('click',function(){
-  var bgt=parseNum($('budget').value);var ge=document.querySelector('#goals .goal.on');var goal=ge?ge.dataset.g:'income';
-  if(!bgt){alert('اكتب المبلغ.');return;}
-  // also check admin opps
-  var adminOpps=getOpps().filter(function(o){return o.priceEGP&&o.priceEGP<=bgt;}).map(function(o){return Object.assign({},o,{goal:goal,why:o.analysis||''});});
-  var shelf=SHELF.concat(adminOpps);
-  var ranked=shelf.map(function(o){return{o:o,s:mSc(o,bgt,goal)};}).filter(function(x){return x.s>=0;}).sort(function(a,b){return b.s-a.s;});
-  if(!ranked.length){$('advTitle').textContent='';$('pickHolder').innerHTML='<div style="background:var(--amber-soft);border:1px solid var(--amber);border-radius:14px;padding:20px;text-align:center;font-weight:600;color:#7a5310">مفيش فرصة مناسبة دلوقتي. جرّب مبلغ أكبر.</div>';$('advResult').classList.add('show');$('advForm').style.display='none';return;}
-  var top=ranked[0].o;
-  $('advTitle').textContent=top.title;
-  var gl=goal==='income'?'اخترنالك دي لأنها تديك أعلى دخل شهري.':goal==='preserve'?'اخترنالك دي لأنها الأأمن.':'اخترنالك دي لأنها أعلى نمو.';
-  $('pickHolder').innerHTML='<div class="pick"><div class="pick-badge">⭐ اختيارك</div>'+
-    '<div class="pick-top" style="background:'+top.c+'"><div class="pick-loc">📍 '+(top.loc||'')+'</div><div class="pick-title">'+top.title+'</div><div class="pick-dev">'+(top.dev||'')+' <span class="sc">سكور '+toAr(top.sc||0)+'</span></div></div>'+
-    '<div class="pick-kpis"><div class="kb"><div class="kv">'+top.price+'</div><div class="kl">السعر</div></div><div class="kb"><div class="kv lime">~'+toAr(top.total||0)+'٪</div><div class="kl">العائد سنوياً</div></div><div class="kb"><div class="kv">~'+toAr(top.rent||0)+'٪</div><div class="kl">إيجاري</div></div></div>'+
-    '<div class="pick-why"><div class="wt">🧭 ليه دي؟</div><p>'+gl+' '+(top.why||'')+'</p><div class="rbar-row"><span class="rl">🛡️ درجة الأمان</span><div class="rbar"><div class="rdot" style="right:'+(top.risk||30)+'%"></div></div></div></div>'+
-    '<div class="pick-btns"><button class="pb-main" data-view="developers">شوف المطوّر</button><button class="pb-alt" data-view="analyzer">حلّل الصفقة</button></div></div>';
-  var others=ranked.slice(1,3);
-  $('altsHolder').innerHTML=others.length?'<h3>بدائل:</h3>'+others.map(function(x){var o=x.o;return'<div class="alt-row"><div class="alt-logo" style="background:'+(o.c||'#6A45C9')+'">'+(o.ab||'؟')+'</div><div class="alt-info"><div class="alt-name">'+o.title+'</div><div class="alt-sub">'+(o.loc||'')+' · '+(o.dev||'')+'</div></div><div class="alt-ret"><div class="av">~'+toAr(o.total||0)+'٪</div><div class="ay">'+o.price+'</div></div></div>';}).join(''):'';
-  $('advResult').classList.add('show');$('advForm').style.display='none';window.scrollTo(0,0);
-});
-$('advRedo').addEventListener('click',function(){$('advResult').classList.remove('show');$('advForm').style.display='block';window.scrollTo(0,0);});
+  /* ---------- ADVISOR ---------- */
+  var SHELF=[
+    {loc:"التجمع الخامس · مصر",title:"شقة ١٤٠م · استلام فوري",dev:"طلعت مصطفى",sc:95,c:"#6A45C9",ab:"TM",priceEGP:6200000,price:"٦٫٢ مليون ج",rent:8,total:20,risk:22,goal:"income",rn:"مطوّر سكوره ٩٥، استلام فوري بلا خطر تأخير، وطلب إيجار عالي."},
+    {loc:"الشيخ زايد · مصر",title:"شقة جاهزة بمنطقة راقية",dev:"سوديك",sc:91,c:"#2A8C7A",ab:"SD",priceEGP:4500000,price:"٤٫٥ مليون ج",rent:7,total:17,risk:26,goal:"preserve",rn:"مطوّر قوي وجاهزة، حفاظ ممتاز على القيمة بمخاطرة منخفضة."},
+    {loc:"مدينة نصر · مصر",title:"شقة بعائد إيجاري عالي",dev:"مطوّر معتمد",sc:80,c:"#9A5BC4",ab:"معتمد",priceEGP:2800000,price:"٢٫٨ مليون ج",rent:9,total:16,risk:30,goal:"income",rn:"أعلى دخل شهري في حدود ميزانية أقل، وطلب إيجار دائم."},
+    {loc:"أكتوبر · مصر",title:"شقة عائلية بمجتمع متكامل",dev:"بالم هيلز",sc:92,c:"#DD8E2A",ab:"PH",priceEGP:3900000,price:"٣٫٩ مليون ج",rent:6,total:15,risk:28,goal:"preserve",rn:"مطوّر بسجل تسليم قوي ومجتمع مطلوب، خيار آمن ومستقر."},
+    {loc:"الساحل الشمالي · مصر",title:"شاليه · نمو موسمي",dev:"لافيستا",sc:93,c:"#51730A",ab:"LV",priceEGP:4800000,price:"٤٫٨ مليون ج",rent:5,total:19,risk:38,goal:"grow",rn:"ارتفاع قيمة عالي ومطوّر بيسلّم في معاده، الأنسب لتكبير المبلغ."},
+    {loc:"العاصمة الإدارية · مصر",title:"شقة تحت الإنشاء بسعر مبكر",dev:"طلعت مصطفى",sc:95,c:"#6A45C9",ab:"TM",priceEGP:3500000,price:"٣٫٥ مليون ج",rent:6,total:22,risk:34,goal:"grow",rn:"أعلى نمو متوقع مع مطوّر سكوره ٩٥ يقلّل مخاطرة الأوف-بلان."},
+    {loc:"الخليج التجاري · دبي",title:"استوديو · عائد نقدي عالي",dev:"إعمار",sc:91,c:"#553098",ab:"EM",priceEGP:12900000,price:"٩٥٠ ألف درهم",rent:8,total:15,risk:30,goal:"income",rn:"عائد إيجاري شهري قوي بالدولار ومطوّر عالمي موثوق."},
+    {loc:"شمال الرياض · السعودية",title:"شقة بنمو مدعوم برؤية ٢٠٣٠",dev:"مطوّر معتمد",sc:86,c:"#B07A1F",ab:"معتمد",priceEGP:14500000,price:"١٫١ مليون ريال",rent:6,total:16,risk:34,goal:"grow",rn:"نمو سكاني ودعم حكومي قوي للقطاع في سوق صاعد."}
+  ];
+  function matchScore(o,budget,goal){
+    if(o.priceEGP>budget)return -1;
+    var s=0;
+    s+=(o.goal===goal)?40:0;
+    if(goal==='income')s+=o.rent*3.2;
+    else if(goal==='grow')s+=o.total*1.4;
+    else s+=(100-o.risk)*0.42;
+    s+=o.sc*0.30;s+=(100-o.risk)*0.18;
+    s+=Math.min((budget-o.priceEGP)/budget,0.4)*8;
+    return s;
+  }
+  $('budget').addEventListener('input',function(){var r=parseNum(this.value);this.value=r?r.toLocaleString('en-US'):'';});
+  document.querySelectorAll('#goals .goal').forEach(function(g){g.addEventListener('click',function(){document.querySelectorAll('#goals .goal').forEach(function(x){x.classList.remove('on');});g.classList.add('on');});});
+  $('go').addEventListener('click',function(){
+    var budget=parseNum($('budget').value);
+    var goalEl=document.querySelector('#goals .goal.on');var goal=goalEl?goalEl.dataset.g:'income';
+    if(!budget){alert('اكتب المبلغ الأول.');return;}
+    var ranked=SHELF.map(function(o){return {o:o,s:matchScore(o,budget,goal)};}).filter(function(x){return x.s>=0;}).sort(function(a,b){return b.s-a.s;});
+    var holder=$('pickHolder'),alts=$('altsHolder');holder.innerHTML='';alts.innerHTML='';
+    if(ranked.length===0){
+      $('resTitle').textContent='';
+      holder.innerHTML='<div class="none">بالمبلغ ده مفيش فرصة على الرف دلوقتي مناسبة تماماً. جرّب مبلغ أكبر شوية، أو سجّل وهنبلّغك أول ما تنزل فرصة على ميزانيتك.</div>';
+      $('advResult').classList.add('show');$('ask').style.display='none';window.scrollTo(0,0);return;
+    }
+    var top=ranked[0].o;$('resTitle').textContent=top.title;
+    var goalLine=goal==='income'?'اخترنالك دي لأنها بتدّيك أعلى دخل شهري ثابت في حدود ميزانيتك، مع مطوّر سكوره عالي يطمّنك إنك هتستلم وتأجّر بأمان.':goal==='preserve'?'اخترنالك دي لأنها الأأمن في حدود ميزانيتك: مطوّر سكوره عالي، ومخاطرة منخفضة، وحفاظ قوي على قيمة فلوسك.':'اخترنالك دي لأنها أعلى نمو متوقع لفلوسك في حدود ميزانيتك، مع مطوّر موثوق يقلّل مخاطرة المبلغ.';
+    holder.innerHTML='<div class="pick"><div class="pick-badge">⭐ اختيارك</div>'+
+      '<div class="pick-top" style="background:'+top.c+'"><div class="pick-loc">📍 '+top.loc+'</div><div class="pick-title">'+top.title+'</div><div class="pick-dev">'+top.dev+' <span class="sc">سكور '+toAr(top.sc)+'</span></div></div>'+
+      '<div class="pick-kpis"><div class="k"><div class="kv">'+top.price+'</div><div class="kl">سعر الوحدة</div></div><div class="k"><div class="kv lime">~'+toAr(top.total)+'٪</div><div class="kl">العائد المتوقع سنوياً</div></div><div class="k"><div class="kv">~'+toAr(top.rent)+'٪</div><div class="kl">عائد إيجاري</div></div></div>'+
+      '<div class="why-box"><div class="wt">🧭 ليه دي اختيارك؟</div><p>'+goalLine+' '+top.rn+'</p><div class="risk-row"><span class="rl2">🛡️ درجة الأمان</span><div class="rbar"><div class="rdot" style="right:'+top.risk+'%"></div></div></div></div>'+
+      '<div class="pick-cta"><button class="cta-main" data-view="opportunities">شوف فرص تانية</button><button class="cta-alt" data-view="analyzer">طمّنّي على صفقتي</button></div></div>';
+    var others=ranked.slice(1,3);
+    if(others.length){
+      alts.innerHTML='<h3>بدائل كمان ممكن تناسبك:</h3>'+others.map(function(x){var o=x.o;return '<div class="alt"><div class="ac" style="background:'+o.c+'">'+o.ab+'</div><div class="am"><div class="an">'+o.title+'</div><div class="ad">'+o.loc+' · '+o.dev+' · سكور '+toAr(o.sc)+'</div></div><div class="av"><div class="x">~'+toAr(o.total)+'٪</div><div class="y">'+o.price+'</div></div></div>';}).join('');
+    }
+    $('advResult').classList.add('show');$('ask').style.display='none';window.scrollTo(0,0);
+  });
+  $('advRedo').addEventListener('click',function(){$('advResult').classList.remove('show');$('ask').style.display='block';window.scrollTo(0,0);});
 
-/* ── WA ── */
-var wap=$('waP'),waf=$('waFab'),wat=$('waTip');
-function owp(){wap.classList.add('open');if(wat)wat.classList.remove('show');}function cwp(){wap.classList.remove('open');}
-waf.addEventListener('click',function(){wap.classList.contains('open')?cwp():owp();});
-$('waX').addEventListener('click',cwp);
-function sendWa(t){var m=(t||$('waT').value||'').trim()||'أهلاً، عايز أستفسر.';window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(m),'_blank');}
-$('waS').addEventListener('click',function(){sendWa();});$('waT').addEventListener('keydown',function(e){if(e.key==='Enter')sendWa();});
-document.querySelectorAll('.wa-chip').forEach(function(c){c.addEventListener('click',function(){sendWa(c.textContent);});});
-if(wat){var wtx=$('waTx');if(wtx)wtx.addEventListener('click',function(e){e.stopPropagation();wat.classList.remove('show');wat.dataset.d='1';});
-setTimeout(function(){if(!wat.dataset.d&&!wap.classList.contains('open')){wat.classList.add('show');waf.classList.add('bnc');setTimeout(function(){waf.classList.remove('bnc');},1000);}},3500);}
+  /* ---------- OPPORTUNITIES ---------- */
+  var OPPS=[
+    {loc:"التجمع الخامس · مصر",mkt:"مصر",title:"شقة ١٤٠م · استلام فوري",dev:"طلعت مصطفى",devsc:95,c:"#6A45C9",price:"٦٫٢ مليون ج",rent:"~٨٪",apprec:"~١٣٪",total:"~٢٠٪",fit:88,risk:22,risknote:"مخاطرة منخفضة: مطوّر سكوره ٩٥، استلام فوري بلا خطر تأخير، وطلب إيجار عالي على المنطقة.",why:"المطوّر سكوره ٩٥ + جاهزة + عائد فوق المتوسط"},
+    {loc:"الخليج التجاري · دبي",mkt:"دبي",title:"استوديو · عائد إيجاري عالي",dev:"Emaar",devsc:91,c:"#553098",price:"٩٥٠ ألف درهم",rent:"~٨٪",apprec:"~٧٪",total:"~١٥٪",fit:84,risk:30,risknote:"مخاطرة متوسطة: سوق إيجار قوي وعائد نقدي عالي، بس فيه ضغط سيولة وقت التسليم في بعض المناطق.",why:"عائد نقدي شهري قوي + مطوّر عالمي موثوق"},
+    {loc:"شمال الرياض · السعودية",mkt:"الرياض",title:"شقة · نمو مدعوم برؤية ٢٠٣٠",dev:"مطوّر معتمد",devsc:86,c:"#2A8C7A",price:"١٫١ مليون ريال",rent:"~٦٪",apprec:"~١٠٪",total:"~١٦٪",fit:80,risk:34,risknote:"مخاطرة متوسطة: نمو مدفوع بمشاريع رؤية ٢٠٣٠، بس السوق أحدث فبيانات التسليم أقل عمقاً.",why:"نمو سكاني قوي + دعم حكومي للقطاع"},
+    {loc:"الساحل الشمالي · مصر",mkt:"مصر",title:"شاليه · استثمار موسمي",dev:"لافيستا",devsc:93,c:"#51730A",price:"٤٫٨ مليون ج",rent:"~٥٪",apprec:"~١٤٪",total:"~١٩٪",fit:79,risk:38,risknote:"مخاطرة متوسطة: ارتفاع قيمة عالي ومطوّر بيسلّم في معاده، بس الإيجار موسمي والسيولة أبطأ.",why:"مطوّر معروف بالالتزام بالمواعيد + نمو قوي للقيمة"}
+  ];
+  var DEVCOLORS={"طلعت مصطفى":"#6A45C9","لافيستا":"#51730A","بالم هيلز":"#DD8E2A","إعمار مصر":"#553098","سوديك":"#2A8C7A","ماونتن فيو":"#C0492E","مدينة مصر":"#9A5BC4","حسن علام":"#3A6EA5","تطوير مصر":"#B07A1F","مصر إيطاليا":"#7A8C2E"};
+  function pct(v){return (typeof v==='number')?('~'+toAr(v)+'٪'):(v||'—');}
+  function norm(o){
+    return {
+      img:o.img||'',title:o.title||'',loc:o.loc||'',market:o.market||o.mkt||'مصر',
+      dev:o.dev||'مطوّر معتمد',sc:o.sc||o.devsc||75,color:o.c||DEVCOLORS[o.dev]||'#6A45C9',
+      price:o.price||'—',rent:pct(o.rent),apprec:pct(o.apprec),total:pct(o.total),
+      fit:(typeof o.fit==='number'?o.fit:80),risk:(typeof o.risk==='number'?o.risk:35),
+      analysis:o.analysis||o.risknote||o.why||'',contact:o.contact||''
+    };
+  }
+  var OPP_DATA=OPPS.map(norm);
+  function renderOpp(m){
+    var g=$('oppGrid');g.innerHTML='';
+    var list=OPP_DATA.filter(function(o){return m==='all'||o.market===m;});
+    if(list.length===0){g.innerHTML='<div style="grid-column:1/-1;text-align:center;color:var(--ink-soft);font-weight:600;padding:30px;background:var(--card);border:1px solid var(--line);border-radius:16px">مفيش فرص في السوق ده دلوقتي. جرّب سوق تاني.</div>';return;}
+    list.forEach(function(o){
+      var el=document.createElement('div');el.className='opp';
+      var header = o.img
+        ? '<div class="opp-photo" style="background-image:url('+o.img+')"><div class="fit"><div class="f">'+toAr(o.fit)+'٪</div><div class="fl">أمان رأس المال</div></div><div class="opp-photo-dev">'+o.dev+' <span class="devsc">سكور '+toAr(o.sc)+'</span></div></div>'
+        : '<div class="opp-top" style="background:'+o.color+'"><div class="fit"><div class="f">'+toAr(o.fit)+'٪</div><div class="fl">أمان رأس المال</div></div><div class="opp-dev">'+o.dev+' <span class="devsc">سكور '+toAr(o.sc)+'</span></div></div>';
+      var titleBlock = o.img ? '<div class="opp-loc">📍 '+o.loc+'</div><div class="opp-title" style="color:var(--plum-ink)">'+o.title+'</div>' : '';
+      el.innerHTML=header+
+        '<div class="opp-mid">'+(o.img?('<div style="grid-column:1/-1;margin-bottom:-4px">'+titleBlock+'</div>'):'')+'<div class="kpi"><div class="kl">سعر الوحدة</div><div class="kv">'+o.price+'</div></div><div class="kpi"><div class="kl">العائد المتوقع سنوياً</div><div class="kv" style="color:var(--lime-deep)">'+o.total+'</div></div><div class="kpi"><div class="kl">عائد إيجاري</div><div class="kv">'+o.rent+'</div></div><div class="kpi"><div class="kl">ارتفاع القيمة</div><div class="kv">'+o.apprec+'</div></div></div>'+
+        '<div class="orisk"><div class="orisk-l"><span style="color:var(--lime-deep)">آمنة</span><span style="color:var(--coral)">مخاطرة عالية</span></div><div class="orisk-bar"><div class="orisk-dot" style="right:'+o.risk+'%"></div></div></div>'+
+        (o.analysis?'<div class="opp-analysis"><div class="oa-t">🧭 تحليل رُشد</div><p>'+o.analysis+'</p></div>':'')+
+        (o.contact?'<div class="opp-contact"><button class="reveal-num" type="button">📞 اظهر رقم التواصل للاستفسار</button></div>':'')+
+        '<div class="opp-foot"><span class="opp-why">القرار قرارك — دي بيانات استرشادية</span><button class="opp-btn" data-view="analyzer">حلّل بنفسك</button></div>';
+      if(o.contact){
+        var rb=el.querySelector('.reveal-num');
+        rb.addEventListener('click',function(){
+          rb.outerHTML='<a class="num-shown" href="tel:'+o.contact.replace(/\s/g,'')+'">📞 '+o.contact+'</a>';
+        });
+      }
+      g.appendChild(el);
+    });
+  }
+  document.querySelectorAll('#filters .chip').forEach(function(c){c.addEventListener('click',function(){document.querySelectorAll('#filters .chip').forEach(function(x){x.classList.remove('on');});c.classList.add('on');renderOpp(c.dataset.m);});});
+  function renderActiveFilter(){var on=document.querySelector('#filters .chip.on');renderOpp(on?on.dataset.m:'all');}
+  // Priority: 1) قاعدة البيانات (الفرص اللي ضفتها تظهر للكل)  2) ملف منشور  3) أمثلة افتراضية
+  (function loadOpps(){
+    fetch('/api/opportunities').then(function(r){return r.ok?r.json():null;}).then(function(data){
+      if(data&&data.length){OPP_DATA=data.map(norm);renderActiveFilter();return;}
+      return fetch('opportunities.json').then(function(r){return r.ok?r.json():null;}).then(function(d2){
+        if(d2&&d2.length){OPP_DATA=d2.map(norm);}
+        renderActiveFilter();
+      });
+    }).catch(renderActiveFilter);
+  })();
+  renderOpp('all');
 
+  /* ---------- ANALYZER ---------- */
+  var AREAS={
+    eg:{'القاهرة الجديدة':{y:6,a:13,live:86,dem:88},'الشيخ زايد':{y:6,a:12,live:86,dem:85},'أكتوبر':{y:6,a:11,live:80,dem:82},'مدينة نصر':{y:7,a:9,live:78,dem:82},'العاصمة الإدارية':{y:7,a:15,live:68,dem:72},'الساحل الشمالي':{y:5,a:14,live:58,dem:74},'الإسكندرية':{y:6,a:10,live:80,dem:80},'أخرى / مش متأكد':{y:6,a:10,live:70,dem:70}},
+    dxb:{'وسط دبي (Downtown)':{y:6,a:8,live:90,dem:90},'دبي مارينا':{y:7,a:7,live:87,dem:88},'الخليج التجاري (Business Bay)':{y:7,a:8,live:80,dem:85},'JVC':{y:8,a:7,live:74,dem:83},'أخرى':{y:7,a:7,live:76,dem:78}}
+  };
+  document.querySelectorAll('#view-analyzer .seg').forEach(function(s){
+    s.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click',function(){
+        s.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');
+        if(s.id==='aGoal')$('targetField').style.display=(b.dataset.g==='live')?'none':'block';
+      });
+    });
+  });
+  var areaSel=$('aArea');
+  function loadAreas(){var c=seg('aCity').c||'eg';areaSel.innerHTML='';Object.keys(AREAS[c]).forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k;areaSel.appendChild(o);});$('aCur').textContent=c==='eg'?'(جنيه)':'(درهم)';}
+  document.querySelectorAll('#aCity button').forEach(function(b){b.addEventListener('click',loadAreas);});
+  loadAreas();
+  ['aPrice','aRent'].forEach(function(id){var el=$(id);el.addEventListener('input',function(){var r=parseNum(el.value);el.value=r?r.toLocaleString('en-US'):'';});});
+  function ringSet(circle,val,valEl,color){var off=276-(276*Math.max(0,Math.min(100,val))/100);circle.style.transition='stroke-dashoffset 1s cubic-bezier(.3,1,.4,1)';circle.setAttribute('stroke',color);setTimeout(function(){circle.style.strokeDashoffset=off;},60);valEl.textContent=toAr(Math.round(val));}
+  function colorFor(v){return v>=70?'#5C7A00':(v>=50?'#E0952F':'#DD4F36');}
+  $('aRun').addEventListener('click',function(){
+    var c=seg('aCity').c||'eg',g=seg('aGoal').g||'both',area=areaSel.value,bm=AREAS[c][area];
+    var price=parseNum($('aPrice').value),rentM=parseNum($('aRent').value);
+    var st=seg('aStatus').st||'ready',fin=seg('aFinish').f||'full',dv=seg('aDev').d||'good';
+    var target=(g==='live')?0:+(seg('aTarget').t||18);
+    if(!price){alert('اكتب سعر الوحدة الأول.');return;}
+    var yieldActual=(rentM>0&&price>0)?(rentM*12/price*100):bm.y;
+    var rentKnown=rentM>0;
+    var apprec=bm.a;if(dv==='concern')apprec-=3;if(st==='off')apprec+=1;
+    var netReturn=yieldActual+apprec-1.5;
+    var overpriced=rentKnown&&yieldActual<bm.y-1.5;
+    var rentTooHigh=rentKnown&&yieldActual>bm.y+2.5;
+    var live=bm.live+(fin==='full'?6:(fin==='semi'?0:-9))+(st==='ready'?6:-12)+(dv==='good'?5:(dv==='unknown'?-3:-12));live=Math.max(5,Math.min(100,live));
+    var inv=Math.min(yieldActual,10)/10*34+Math.min(apprec,16)/16*30+bm.dem/100*18+(dv==='good'?14:(dv==='unknown'?6:-2));if(st==='off')inv-=8;if(overpriced)inv-=10;inv=Math.max(5,Math.min(100,inv));
+    var retScore=null,retLine='',retDet='';
+    if(g!=='live'){var ratio=netReturn/target;retScore=Math.max(5,Math.min(100,ratio*72));retLine=netReturn>=target?'بيحقق هدفك ✓':(netReturn>=target*0.8?'قريب من هدفك':'أقل من هدفك');retDet='متوقع ~'+toAr(Math.round(netReturn))+'٪ سنوياً، وإنت عايز ~'+toAr(target)+'٪.';}
+    $('nYield').textContent=toAr(yieldActual.toFixed(1))+'٪';$('nApprec').textContent=toAr(Math.round(apprec))+'٪';$('nTotal').textContent='~'+toAr(Math.round(netReturn))+'٪';
+    if(retScore===null){$('cardReturn').style.opacity=.45;$('valReturn').textContent='—';$('lineReturn').textContent='مش هدفك دلوقتي';$('detReturn').textContent='إنت اخترت سكن بس، فمحسبناش العائد كمعيار أساسي.';}
+    else{$('cardReturn').style.opacity=1;ringSet($('ringReturn'),retScore,$('valReturn'),colorFor(retScore));$('lineReturn').textContent=retLine;$('lineReturn').style.color=colorFor(retScore);$('detReturn').textContent=retDet;}
+    ringSet($('ringLive'),live,$('valLive'),colorFor(live));$('lineLive').textContent=live>=70?'سكن مريح ✓':(live>=50?'سكن مقبول':'مش مثالية للسكن');$('lineLive').style.color=colorFor(live);
+    $('detLive').textContent=(st==='off'?'تحت الإنشاء، فمش هتسكن دلوقتي. ':'')+(fin==='core'?'محتاجة تشطيب كامل قبل السكن.':'المنطقة والتجهيز مناسبين للسكن.');
+    ringSet($('ringInv'),inv,$('valInv'),colorFor(inv));$('lineInv').textContent=inv>=70?'استثمار قوي ✓':(inv>=50?'استثمار مقبول':'استثمار ضعيف');$('lineInv').style.color=colorFor(inv);
+    $('detInv').textContent='عائد '+toAr(yieldActual.toFixed(1))+'٪ + ارتفاع '+toAr(Math.round(apprec))+'٪، والطلب على المنطقة '+(bm.dem>=82?'عالي':'متوسط')+'.';
+    var bothT,bothD;
+    if(live>=62&&inv>=58){bothT='أيوة، تنفع للسكن والاستثمار 👌';bothD='تقدر تعيش فيها وفي نفس الوقت تحافظ على قيمتها وتأجّرها بعدين. ده وضع مريح.';}
+    else if(live>=62&&inv<58){bothT='تنفع سكن أكتر من استثمار';bothD='هتعيش فيها مبسوط، بس كاستثمار العائد مش قوي. تمام لو هدفك الأساسي السكن.';}
+    else if(live<62&&inv>=58){bothT='تنفع استثمار أكتر من سكن';bothD='كأرقام استثمار كويسة، بس مش الأنسب كبيت تعيش فيه. تمام لو هتأجّرها مش هتسكنها.';}
+    else{bothT='لا للسكن ولا للاستثمار بشكل قوي';bothD='الوحدة دي مش بتتفوق في أي اتجاه. الأفضل تدوّر على أوضح منها.';}
+    $('bothTitle').textContent=bothT;$('bothDesc').textContent=bothD;
+    var items=[];
+    if(dv==='concern')items.push(['bad','✕','المطوّر ده علامة خطر كبيرة','سجل تأخير أو سمعة سيئة ممكن يخسّرك كل حاجة. متدفعش لحد ما تتأكد من تسليماته السابقة.']);
+    if(dv==='unknown')items.push(['warn','!','اتأكد من سجل المطوّر','دوّر على مشاريعه القديمة: سلّم في معاده؟ راضيين عنه؟ ده أهم من البروشور.']);
+    if(st==='off')items.push(['warn','!','وحدة تحت الإنشاء = مخاطرة تسليم','اتأكد إن العقد بيحميك لو اتأخر، وإن المشروع مسجّل رسمياً وفيه حساب ضمان.']);
+    if(overpriced)items.push(['warn','!','السعر مرتفع نسبةً للإيجار','العائد الإيجاري أقل من متوسط المنطقة — يعني غالباً بتدفع زيادة. قارن بوحدات شبهها.']);
+    if(rentTooHigh)items.push(['warn','!','الإيجار اللي قالولك عليه عالي شوية','تأكد إنه واقعي فعلاً مش رقم على الورق. اسأل سماسرة في نفس المنطقة.']);
+    if(!rentKnown)items.push(['warn','!','مفيش رقم إيجار فعلي','حسبنا بمتوسط المنطقة. اسأل عن إيجار وحدات مؤجّرة فعلاً قبل ما تعتمد على رقم.']);
+    if(fin==='core')items.push(['warn','!','محتاجة تشطيب','زوّد تكلفة التشطيب على السعر وإنت بتحسب عشان متفاجأش.']);
+    items.push(['ok','✓','اتأكد إن الوحدة مسجّلة رسمياً','اطلب الأوراق الأصلية (مش صور) وتأكد من التسجيل في الشهر العقاري / الجهة المختصة.']);
+    items.push(['ok','✓','عاين بنفسك قبل أي دفع','متدفعش تحت ضغط الوقت. أي حد بيستعجلك تدفع بسرعة = علامة استفهام.']);
+    var ch=$('aChecks');ch.innerHTML='';
+    items.forEach(function(it){var d=document.createElement('div');d.className='citem '+it[0];d.innerHTML='<div class="ci">'+it[1]+'</div><div><div class="ct">'+it[2]+'</div><div class="cd">'+it[3]+'</div></div>';ch.appendChild(d);});
+    var hardStop=(dv==='concern')||(g!=='live'&&inv<40)||(g==='live'&&live<42)||(g==='both'&&live<55&&inv<50);
+    var goodGo=!hardStop&&(g==='live'?live>=68:(g==='invest'?(inv>=68&&(target===0||netReturn>=target*0.95)):(live>=62&&inv>=60&&netReturn>=target*0.9)));
+    var hero=$('vhero'),vt=$('vtitle'),vd=$('vdesc');hero.className='verdict-hero';
+    if(hardStop){hero.classList.add('v-stop');vt.textContent='ابعد · متدفعش';vd.textContent='فيه علامة خطر حقيقية في الوحدة دي. مش مستاهلة المخاطرة — دوّر على أوضح منها.';}
+    else if(goodGo){hero.classList.add('v-go');vt.textContent='تقدر تدفع وإنت مطمن';vd.textContent='الوحدة دي بتخدم هدفك ومفيش خطر واضح. كمّل خطوات التأكد اللي تحت وإنت في وضع كويس.';}
+    else{hero.classList.add('v-care');vt.textContent='خد بالك واتأكد الأول';vd.textContent='فيها كويس وفيها ناقص. متدفعش دلوقتي — خلّص النقط اللي تحت الأول، وبعدين قرّر.';}
+    $('formCard').style.display='none';$('anaReport').classList.add('show');window.scrollTo(0,0);
+  });
+  $('anaRedo').addEventListener('click',function(){$('anaReport').classList.remove('show');$('formCard').style.display='block';window.scrollTo(0,0);});
+
+  /* ---------- DEVELOPERS ---------- */
+  var DEVS=[
+    {k:"tmg",n:"طلعت مصطفى (TMG)",ab:"TM",c:"#6A45C9",y:"+٤٠ سنة",reg:25,del:34,exp:25,stab:14,deliver:3196,sales:"٢١١ مليار",note:"الأعلى تسليماً في ٢٠٢٥ وسمعة قوية في الالتزام بالمواعيد.",src:"تقرير The Board Consulting · 2025"},
+    {k:"lavista",n:"لافيستا (La Vista)",ab:"LV",c:"#51730A",y:"+٢٠ سنة",reg:25,del:32,exp:22,stab:14,deliver:2179,sales:"٣٢ مليار",note:"معروفة تحديداً بتسليم مشروعاتها في مواعيدها.",src:"تقرير The Board Consulting · 2025"},
+    {k:"palmhills",n:"بالم هيلز (Palm Hills)",ab:"PH",c:"#DD8E2A",y:"منذ ١٩٩٧",reg:25,del:31,exp:23,stab:13,deliver:2600,sales:"١٤٣ مليار",note:"",src:"تقرير The Board Consulting · 2025"},
+    {k:"emaar",n:"إعمار مصر (Emaar Misr)",ab:"EM",c:"#553098",y:"منذ ١٩٩٧",reg:25,del:28,exp:24,stab:14,deliver:1112,sales:"٧٨ مليار",note:"ذراع إعمار الإماراتية، معايير بناء عالمية.",src:"تقارير السوق · 2025"},
+    {k:"sodic",n:"سوديك (SODIC)",ab:"SD",c:"#2A8C7A",y:"+٢٥ سنة",reg:25,del:30,exp:23,stab:13,deliver:2083,sales:"٤٨ مليار",note:"",src:"تقرير The Board Consulting · 2025"},
+    {k:"mountainview",n:"ماونتن فيو (Mountain View)",ab:"MV",c:"#C0492E",y:"منذ ٢٠٠٥",reg:25,del:30,exp:22,stab:13,deliver:2208,sales:"٦٥٫٧ مليار",note:"",src:"تقارير السوق · 2025"},
+    {k:"madinetmasr",n:"مدينة مصر (Madinet Masr)",ab:"MM",c:"#9A5BC4",y:"+٤٠ سنة",reg:25,del:27,exp:22,stab:12,deliver:1300,sales:"٥٢ مليار",note:"تقارير أشارت لارتفاع في إلغاء التعاقدات خلال ٢٠٢٥ — تستحق متابعة.",src:"تقارير السوق · 2025"},
+    {n:"حسن علام (Hassan Allam)",ab:"HA",c:"#3A6EA5",y:"منذ ١٩٨٣",reg:25,del:26,exp:23,stab:13,deliver:0,sales:"—",note:"إرث قوي في الإنشاءات الكبرى.",src:"بيانات الشركة العامة"},
+    {n:"تطوير مصر (Tatweer Misr)",ab:"TW",c:"#B07A1F",y:"+١٠ سنين",reg:25,del:26,exp:21,stab:13,deliver:0,sales:"—",note:"",src:"بيانات الشركة العامة"},
+    {n:"مصر إيطاليا (Misr Italia)",ab:"MI",c:"#7A8C2E",y:"منذ ١٩٩٨",reg:25,del:25,exp:21,stab:12,deliver:0,sales:"—",note:"",src:"بيانات الشركة العامة"}
+  ];
+  DEVS.forEach(function(d){d.score=d.reg+d.del+d.exp+d.stab;});
+  function tier(s){return s>=90?["ممتاز","#51730A"]:s>=82?["قوي","#6A45C9"]:s>=70?["جيد","#DD8E2A"]:["خد بالك","#DD4F36"];}
+  function renderDevs(){
+    var q=$('devQ').value.trim(),sort=$('devSort').value;
+    var arr=DEVS.filter(function(d){return d.n.indexOf(q)>-1;});
+    arr.sort(function(a,b){return sort==='name'?a.n.localeCompare(b.n,'ar'):sort==='deliver'?b.deliver-a.deliver:b.score-a.score;});
+    var L=$('devList');L.innerHTML='';
+    arr.forEach(function(d){
+      var t=tier(d.score);
+      var facts='<div class="fact"><b>'+(d.deliver?toAr(d.deliver.toLocaleString('en-US')):'—')+'</b>وحدة سُلّمت ٢٠٢٥</div><div class="fact"><b>'+d.sales+'</b>مبيعات (جنيه)</div><div class="fact"><b>'+d.y+'</b>في السوق</div>';
+      function P(lbl,val,max){return '<div class="pillar"><div class="pl-top"><span>'+lbl+'</span><span class="v">'+toAr(val)+'/'+toAr(max)+'</span></div><div class="bar"><i data-w="'+(val/max*100)+'"></i></div></div>';}
+      var el=document.createElement('div');el.className='dev';
+      el.innerHTML='<div class="dev-head"><div class="dev-logo" style="background:'+d.c+'">'+d.ab+'</div><div class="dev-main"><div class="dev-name">'+d.n+'</div><div class="dev-meta">'+(d.deliver?('سلّم '+toAr(d.deliver.toLocaleString("en-US"))+' وحدة في ٢٠٢٥'):'مطوّر معتمد')+' · مسجّل رسمياً ✓</div></div><div class="dev-score"><div class="sc" style="color:'+t[1]+'">'+toAr(d.score)+'</div><div class="tier" style="color:'+t[1]+'">'+t[0]+'</div></div><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>'+
+        '<div class="dev-body"><div class="dev-inner"><div class="pillars">'+P('التسجيل الرسمي',d.reg,25)+P('سجل التسليم',d.del,35)+P('الخبرة وحجم السوق',d.exp,25)+P('الاستقرار والسمعة',d.stab,15)+'</div><div class="facts">'+facts+'</div>'+(d.note?'<div class="dnote">⚑ '+d.note+'</div>':'')+'<div class="src">المصدر: '+d.src+' · <span class="srclink">تفاصيل ومراجعة</span></div>'+(d.k?'<a href="developer.html?dev='+d.k+'" style="display:block;text-align:center;margin-top:14px;font-weight:700;font-size:14px;color:#fff;background:var(--plum);padding:12px;border-radius:12px;text-decoration:none">🔗 افتح صفحته الكاملة وشاركها</a>':'')+'<div class="reviews"><span class="rt">💬 تجارب الناس اللي اشترت منه لسه بتتجمّع</span><button class="addrev">أضف تجربتك</button></div></div></div>';
+      el.querySelector('.dev-head').addEventListener('click',function(){
+        var was=el.classList.contains('open');
+        document.querySelectorAll('#devList .dev.open').forEach(function(x){x.classList.remove('open');});
+        if(!was){el.classList.add('open');setTimeout(function(){el.querySelectorAll('.bar i').forEach(function(b){b.style.width=b.dataset.w+'%';});},120);}
+      });
+      el.querySelector('.addrev').addEventListener('click',function(ev){ev.stopPropagation();var r=el.querySelector('.reviews');r.innerHTML='<span class="rt">🌿 تمام، سجّلنا اهتمامك — قريباً هتقدر تضيف تجربتك بالتفصيل.</span>';});
+      L.appendChild(el);
+    });
+  }
+  $('devQ').addEventListener('input',renderDevs);
+  $('devSort').addEventListener('change',renderDevs);
+  renderDevs();
+
+  /* ---------- boot ---------- */
+  var initial=(location.hash||'').replace('#','')||'home';
+  showView(initial);
 })();
 </script>
+
+<!-- WhatsApp floating widget -->
+<div class="wa-widget" id="waWidget">
+  <div class="wa-panel" id="waPanel" role="dialog" aria-label="محادثة واتساب">
+    <div class="wa-head">
+      <div class="wa-ava">🛡️</div>
+      <div class="wa-meta"><div class="wa-name">رُشد</div><div class="wa-status"><span class="dot"></span> بنرد عادةً خلال دقايق</div></div>
+      <button class="wa-x" id="waClose" aria-label="إغلاق">&times;</button>
+    </div>
+    <div class="wa-body">
+      <div class="wa-bubble">أهلاً 👋 اسأل عن أي فرصة أو مطوّر، وهنطمّنك قبل ما تاخد أي قرار. اكتب استفسارك وهنرد عليك على واتساب.</div>
+      <div class="wa-chips">
+        <button class="wa-chip">عايز أطمن على صفقة</button>
+        <button class="wa-chip">استفسار عن مطوّر</button>
+        <button class="wa-chip">إزاي رُشد بيشتغل؟</button>
+      </div>
+    </div>
+    <div class="wa-input">
+      <input id="waText" type="text" placeholder="اكتب رسالتك..." aria-label="رسالتك">
+      <button id="waSend" aria-label="إرسال">&#10148;</button>
+    </div>
+  </div>
+  <div class="wa-tip" id="waTip">محتاج مساعدة؟ كلّمنا 👋<button class="wa-tip-x" id="waTipX" aria-label="إغلاق">&times;</button></div>
+  <button class="wa-fab" id="waFab" aria-label="تواصل عبر واتساب">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.25-.1-.45-.15-.65.15-.2.3-.75.95-.9 1.1-.15.2-.35.2-.65.05-.3-.15-1.25-.45-2.4-1.45-.9-.8-1.5-1.75-1.65-2.05-.15-.3 0-.45.15-.6.15-.15.3-.35.45-.55.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.65-1.6-.9-2.15-.25-.55-.5-.5-.65-.5h-.55c-.2 0-.5.05-.75.35-.25.3-1 .95-1 2.35s1.05 2.7 1.2 2.9c.15.2 2.05 3.15 5 4.4.7.3 1.25.5 1.65.65.7.2 1.35.2 1.85.1.55-.1 1.7-.7 1.95-1.35.25-.65.25-1.2.15-1.35-.05-.1-.25-.15-.55-.3z"/><path d="M12 2A10 10 0 0 0 3.5 17.3L2 22l4.8-1.45A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.85.85.85-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  </button>
+</div>
+<script>
+(function(){
+  /* ====== غيّر الرقم ده لرقم واتسابك (بصيغة دولية بدون + أو أصفار) مثال مصر: 2010xxxxxxxx ====== */
+  var WA_NUMBER="201111066828";
+  function $(id){return document.getElementById(id);}
+  var panel=$('waPanel'),fab=$('waFab'),tip=$('waTip');
+  function openPanel(){panel.classList.add('open');if(tip)tip.classList.remove('show');setTimeout(function(){var t=$('waText');if(t)t.focus();},250);}
+  function closePanel(){panel.classList.remove('open');}
+  fab.addEventListener('click',function(){panel.classList.contains('open')?closePanel():openPanel();});
+  $('waClose').addEventListener('click',closePanel);
+  function send(txt){
+    var msg=(txt||$('waText').value||'').trim();
+    if(!msg)msg='أهلاً، عايز أستفسر عن الاستثمار العقاري على رُشد.';
+    window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg),'_blank');
+  }
+  $('waSend').addEventListener('click',function(){send();});
+  $('waText').addEventListener('keydown',function(e){if(e.key==='Enter')send();});
+  Array.prototype.forEach.call(document.querySelectorAll('.wa-chip'),function(c){c.addEventListener('click',function(){send(c.textContent);});});
+  if(tip){
+    var tx=$('waTipX'); if(tx)tx.addEventListener('click',function(e){e.stopPropagation();tip.classList.remove('show');tip.dataset.dismiss='1';});
+    setTimeout(function(){if(!tip.dataset.dismiss&&!panel.classList.contains('open')){tip.classList.add('show');fab.classList.add('bounce');setTimeout(function(){fab.classList.remove('bounce');},1000);}},3500);
+  }
+})();
+</script>
+
 </body>
 </html>
